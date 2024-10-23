@@ -1,0 +1,46 @@
+\documentclass[11pt,oneside]{amsart}
+\input{../preamble}
+
+\title{MATH2202 Spring 2024\\
+Discussion 10}
+\date{April 2, 2024}
+
+\theoremstyle{definition}
+\newtheorem{question}{Question}
+
+\begin{document}
+  \maketitle
+
+  The TA will demonstrate 1 and 2.
+
+  \begin{problem}
+    Recall the polar coordinate change:
+    \[x=r\cos\theta,\quad y=r\sin\theta.\]
+    Calculate the Jacobian $J$ for this coordinate change and show it is equal to $r$.
+
+    This justifies the factor of $r$ in the formula for polar integration.
+  \end{problem}
+
+  \begin{problem}
+    Evaluate $\iint_{\mathcal R}(x^2-xy+y^2)\,dA$ where $\mathcal R$ is the ellipse given by $x^2-xy+y^2\leq 2$ and using the transformation
+    \[x=\sqrt2u-\sqrt\frac23v,\quad y=\sqrt2u+\sqrt\frac23v.\]
+    (Answer: $\frac{4\pi}{\sqrt3}$)
+  \end{problem}
+
+  \begin{problem}
+    Evaluate $\iint_{\mathcal R}(x+y)\,dA$ where $\mathcal R$ is the trapezoidal region with vertices given by $(0,0)$, $(5,0)$, $\left(\frac52,\frac52\right)$, and $\left(\frac52,-\frac52\right)$ using the transformation $x=2u+3v$ and $y=2u-3v$. (Answer: 125/4)
+  \end{problem}
+
+  \begin{problem}
+    This will prepare you for the demonstration of the Gaussian integral that will be done in class tomorrow.
+    \begin{enumerate}[(a)]
+      \item Prove that, for any functions $f,g$ of one variable,
+      \[\int_a^b\int_c^df(x)g(y)\,dx\,dy=\left(\int_a^bf(x)\,dx\right)\left(\int_c^dg(y)\,dy\right).\]
+      \item By using the above, prove that
+      \[\left(\int_{-\infty}^\infty e^{-x^2}\,dx\right)^2=\iint_{\bR^2}e^{-x^2-y^2}\,dx\,dy.\]
+      (Here, $\bR^2$ stands for the whole plane.)
+    \end{enumerate}
+
+
+  \end{problem}
+\end{document}

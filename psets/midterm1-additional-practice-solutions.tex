@@ -1,0 +1,252 @@
+\documentclass[11pt,oneside]{amsart}
+\input{../preamble}
+
+\title{MATH2202 Spring 2024\\
+Midterm 1 additional practice problems}
+
+\excludeversion{solution}
+\theoremstyle{definition}
+\newtheorem{question}{Question}
+
+\begin{document}
+\maketitle
+
+\subsection*{Chapter 9. Vectors}
+\begin{practice}p.785 \#3\end{practice}
+\begin{pracsol}
+  The distance between $(5,1,-2)$ and $(6,-7,2)$ is
+  \[\sqrt{(6-5)^2+(-7-1)^2+(2-(-2))^2}=\sqrt{1+64+16}=\sqrt{81}=9.\]
+\end{pracsol}
+\begin{practice}p.785 \#9\end{practice}
+\begin{pracsol}
+  We have $\overrightarrow{PQ}=(6,6,3)$, $\|\overrightarrow{PQ}\|=\sqrt{36+36+9}=\sqrt{81}=9$, and $\dir(\overrightarrow{PQ})=\frac{\overrightarrow{PQ}}{\|\overrightarrow{PQ}\|}=\frac{(6,6,3)}9=(\frac23,\frac23,\frac13)$. So $\overrightarrow{PQ}$ in the form $\|\bv\|\dir(\bv)$ is
+  \[\overrightarrow{PQ}=(6,6,3)=9\left(\frac23,\frac23,\frac13\right).\]
+\end{pracsol}
+\begin{practice}p.785 \#11\end{practice}
+\begin{pracsol}
+  We have $\overrightarrow{PQ}=(2,-2,-2)$, and $\|\overrightarrow{PQ}\|=\sqrt{4+4+4}=2\sqrt3$. So $\overrightarrow{PQ}$ in the form $\|\bv\|\dir(\bv)$ is
+  \[3\sqrt2\left(\frac 1{\sqrt3},-\frac 1{\sqrt3},-\frac 1{\sqrt3}\right).\]
+\end{pracsol}
+\begin{practice}p.785 \#19\end{practice}
+\begin{pracsol}
+  We solve the dot product equation for perpendicularity
+  \[(a,3,1)\cdot(4,5,13)=0\iff 4a+15+13=0\iff 4a=-28\iff a=-7.\]
+\end{pracsol}
+\begin{practice}p.785 \#25\end{practice}
+\begin{pracsol}
+  We solve the dot product equation for perpendicularity
+  \[\begin{split}
+    (3,s,s)\cdot(2,s,-5)=0 &\iff 6+s^2-5s=0\\
+    &\iff s^2-5s+6=0 \\
+    &\iff (s-2)(s-3)=0 \\
+    &\iff s=2\text{ or }s=3.
+  \end{split}\]
+\end{pracsol}
+\begin{practice}p.785 \#29\end{practice}
+\begin{pracsol}
+  We have
+  \[\cos\theta=\frac{(1,1,4)\cdot(3,0,3)}{\|(1,1,4)\|\|(3,0,3)\|}=\frac{15}{\sqrt{18}\sqrt{18}}=\frac{15}{18}=\frac56\implies\theta=\cos^{-1}\left(\frac56\right).\]
+\end{pracsol}
+\begin{practice}p.785 \#45\end{practice}
+\begin{pracsol}
+  The area of the triangle is
+  \[\frac12\|(2,2,3)\times(2,2,-2)\|=\frac12\|(-10,10,0)\|=\frac12\cdot 10\sqrt2=5\sqrt2.\]
+\end{pracsol}
+\begin{practice}p.785 \#49\end{practice}
+\begin{pracsol}
+  The area of the parallelogram is
+  \[\|(3,1,-1)\times(1,2,2)\|=\|(4,-7,5)\|=\sqrt{90}=3\sqrt{10}.\]
+\end{pracsol}
+\begin{practice}p.785 \#71\end{practice}
+\begin{pracsol}
+  We first find a plane with normal vector $\bn$ and passing throgh $(3,2,-7)$, which at first will not satisfy the conditions of the problem, but we will then fix it. Such a plane has equation $6x+5y+z=D$ and this $D$ is such that $(3,-2,7)$ is on the plane, i.e.\
+  \[6(3)+5(-2)+7=D.\]
+  So $D=15$. Notice that the problem requires an equation of the form $Ax+By+Cz=1$, which the equation $6x+5y+z=15$ does not satisfy. In order to rectify this, we simply divide the entire equation by 15. Dividing an equation by a constant does not affect the set of points which satisfy it. So our equation is now
+  \[\frac 6{15}x+\frac5{15}y+\frac1{15}z=1,\]
+  so $A=\frac6{15}$.
+\end{pracsol}
+\begin{practice}p.785 \#73\end{practice}
+\begin{pracsol}
+  Let $P,Q,R$ be the 3 given points $(4,2,1),(5,3,2),(6,1,0)$ respectively. We can compute a normal vector $\bn$ to the plane by computing $\overrightarrow{PQ}\times\overrightarrow{QR}$. We have $\overrightarrow{PQ}=(1,1,1)$ and $\overrightarrow{QR}=(1,-2,-2)$. So
+  \[\bn=\overrightarrow{PQ}\times\overrightarrow{QR}=(1,1,1)\times(1,-2,-2)=(0,3,-3).\]
+  So our plane has equation of the form $3y-3z=D$. We can plug in any of our points $P$, $Q$, or $R$ into this equation to find $D$, but it's better to plug in all of them to make sure we didn't mess up our cross product computation. When we do this we find $D=3$ in all cases, so the plane is $3y-3z=3$, or put more simply (dividing the equation by 3):
+  \[y-z=1\]
+\end{pracsol}
+\begin{practice}p.785 \#77\end{practice}
+\begin{pracsol}
+  $\br(t)=P_0+t\mathbf m=(1,-1,2)+t(1,-1,2)$. I consider this format to satisfy the requirements of finding parametric equations, but if you want, the $x,y,z$ functions are
+  \begin{align*}
+    x(t) &= 1+t,\\
+    y(t) &= -1-t,\\
+    z(t) &=2+2t.
+  \end{align*}
+\end{pracsol}
+
+\subsection*{Chapter 10. Vector-valued functions}
+\begin{practice}p.812 \#1\end{practice}
+\begin{pracsol}
+  \begin{align*}
+    \br(t) &= t\bi+t^2\bj+t^3\bk\\
+    \bv(t) &= \bi+2t\bj+3t^2\bk\\
+    v(t) &= \|\bv(t)\| =\sqrt{1+4t^2+9t^4}\\
+    \mathbf a(t) &= 2\bj+6t\bk.
+  \end{align*}
+\end{pracsol}
+\begin{practice}p.812 \#21\end{practice}
+\begin{pracsol}
+  The position vector at time $t$ is $\br(t)=((3+t)/(1+t^2),t^2,\sin(\pi t))$. The tangent vector at time $t$ is
+  \[\br'(t)=((1-6t-t^2)/(1+t^2)^2,2t,\pi\cos(\pi t)).\]
+  The point $P=(1,4,0)$ corresponds to $t=2$, so the tangent vector at this point is
+  \[\br'(2)=(-3/5,4,\pi).\]
+  Consequently, the tangent line to the curve at point $P$ is parametrized by the vector-valued function
+  \[u\mapsto \br(2)+u\br'(2)=(1,4,0)+u(-3/5,4,\pi).\]
+  The parametric equations for the tangent line are
+  \[x=1-(3/5)u,\quad y=4+4u,\quad z=\pi u.\]
+\end{pracsol}
+\begin{practice}p.853 \#3\end{practice}
+\begin{pracsol}
+  \begin{center}
+    \begin{tikzpicture}
+      \begin{axis}
+      \addplot3[variable=t,domain=-6*pi:6*pi,samples=200,samples y=1] (t,{sin(deg(t))},{cos(deg(t))});
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
+\end{pracsol}
+\begin{practice}p.853 \#8\end{practice}
+\begin{pracsol}
+  $\br'(t)=(\cos(t),\sec^2(t),e^t)$.
+\end{pracsol}
+
+\subsection*{Chapter 11. Multivariable functions}
+\begin{practice}p.872 \#33\end{practice}
+\begin{pracsol}
+  Level sets are circles
+  \[\sqrt{x^2+y^2}=c,\]
+  or
+  \[x^2+y^2=c^2.\]
+  Several are sketched below.
+  \begin{center}
+    \begin{tikzpicture}
+      \draw[->] (-3,0) -- (3,0) node[right] {$x$};
+      \draw[->] (0,-3) -- (0,3) node[above] {$y$};
+      \foreach \x in {-2,-1,1,2}
+        \draw (\x,0.1) -- (\x,-0.1) node[below] {$\x$};
+      \foreach \y in {-2,-1,1,2}
+        \draw (0.1,\y) -- (-0.1,\y) node[left] {$\y$};
+      \foreach \r in {1,2,3}
+        \draw (0,0) circle (\r);
+    \end{tikzpicture}
+  \end{center}
+  Lift the level set to height $z=c$ and the surface can be seen to form a cone:
+  \begin{center}
+    \begin{tikzpicture}
+      \begin{axis}[axis equal, view={-15}{-15}, xlabel=$x$, ylabel=$y$, zlabel=$z$, zmin=-1, zmax=6, axis lines=center, mesh/interior colormap name=hot, colormap/blackwhite]
+        \addplot3[surf, shader=flat, opacity=0.8] {sqrt(x^2+y^2)};
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
+\end{pracsol}
+\begin{practice}p.872 \#35\end{practice}
+\begin{pracsol}
+  Level sets are circles
+  \[\sqrt{1-x^2-y^2}=c,\]
+  or
+  \[x^2+y^2=1-c^2.\]
+  Several are sketched below.
+  \begin{center}
+    \begin{tikzpicture}[scale=3]
+      \draw[->] (-1.2,0) -- (1.2,0) node[right] {$x$};
+      \draw[->] (0,-1.2) -- (0,1.2) node[above] {$y$};
+      \foreach \x in {-1,1}
+        \draw (\x,0.1) -- (\x,-0.1) node[below] {$\x$};
+      \foreach \y in {-1,1}
+        \draw (0.1,\y) -- (-0.1,\y) node[left] {$\y$};
+      \foreach \c in {0,0.3,0.6,0.9}
+        \draw (0,0) circle ({sqrt(1-\c*\c)});
+    \end{tikzpicture}
+  \end{center}
+  Lift the level set to height $z=c$ and the surface can be seen to form a hemisphere:
+  \begin{center}
+    \begin{tikzpicture}[scale=3, rotate around x=-90]
+      \shade[ball color=blue!10!white,opacity=0.2] (1cm,0) arc (0:-180:1cm and 5mm) arc (180:0:1cm and 1cm);
+      % draw 3d axes with tick marks
+      \draw[->] (-1.2,0,0) -- (1.2,0,0) node[right] {$x$};
+      \draw[->] (0,-1.2,0) -- (0,1.2,0) node[above] {$y$};
+      \draw[->] (0,0,-0.5) -- (0,0,1.2) node[above] {$z$};
+      \foreach \x in {-1,1}
+        \draw (\x,0.1,0) -- (\x,-0.1,0) node[below] {$\x$};
+      \foreach \y in {-1,1}
+        \draw (0.1,\y,0) -- (-0.1,\y,0) node[left] {$\y$};
+      \foreach \z in {1}
+        \draw (0,0.1,\z) -- (0,-0.1,\z) node[below] {$\z$};
+    \end{tikzpicture}
+  \end{center}
+\end{pracsol}
+\begin{practice}p.872 \#37\end{practice}
+\begin{pracsol}
+  Level sets are circles
+  \[\sqrt{y^2+2x+x^2}=c,\]
+  or
+  \[(x+1)^2+y^2=a+1.\]
+  Several are sketched below.
+  \begin{center}
+    \begin{tikzpicture}
+      \draw[->] (-4,0) -- (4,0) node[right] {$x$};
+      \draw[->] (0,-4) -- (0,4) node[above] {$y$};
+      \foreach \x in {-4,-2,2}
+        \draw (\x,0.1) -- (\x,-0.1) node[below] {$\x$};
+      \foreach \y in {-2,2}
+        \draw (0.1,\y) -- (-0.1,\y) node[left] {$\y$};
+      \foreach \c in {-0.5,0,0.5,1,1.5,2}
+        \draw (-1,0) circle ({sqrt(\c+1)});
+    \end{tikzpicture}
+  \end{center}
+  Lift the level set to height $z=c$ and the surface can be seen to form a paraboloid:
+  \begin{center}
+    \begin{tikzpicture}
+      \begin{axis}[axis equal, view={-15}{-15}, xlabel=$x$, ylabel=$y$, zlabel=$z$, zmin=-1, zmax=6, axis lines=center, mesh/interior colormap name=hot, colormap/blackwhite]
+        \addplot3[surf, shader=flat, opacity=0.8] {y^2+2*x+x^2};
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
+\end{pracsol}
+\begin{practice}p.872 \#46\end{practice}
+\begin{pracsol}
+  (a) iii. The level curves are the parabolas $y=x^2-c$; (b) vi. The level curves are the hyperbolas $y=c/x$ for $c\neq 0$ and the coordinate axes for $c=0$; (c) iv. The level curves are the pairs of lines $x+y=\pm c$ for $c>0$ and the line $x+y=0$ for $c=0$; (d) v. The level curves are the ellipses $2x^2+y^2=c$ for $c\geq 0$ and the origin for $c=0$; (e) i. The level curves are the hyperbolas $x^2-y^2=c$ for $c\neq 0$ and the pair of straight lines $y=\pm x$ for $c=0$; (f) ii. The level curves are the lines $y=2x-c$.
+\end{pracsol}
+\begin{practice}p.873 \#60\end{practice}
+\begin{pracsol}
+  \begin{enumerate}[(a)]
+    \item Yes: $f(0,1)=f(1,0)=1$.
+    \item No: $0<f(1/2,0)<1/2$ whereas $f(0,1/2)=1/2$
+    \item $f(-1,1)$ is greater than $f(1/2,1)$ since $3/2<f(-1,1)<2$ and $1<f(1/2,1<3/2$
+    \item $t\mapsto f(-1/2-t,-3/2+t)$ increases for $t\geq 0$ since the trajectory $x=-1/2-t,y=-3/2+t$ is upward and to the left, crossing increasingly greater level curves of $f$
+    \item $f(x,-1)$ is an increasing function of $x$ on $[0,\infty]$ since the trajectory $x=t,y=-1\ (0\leq t)$ crosses level curves $f(x,y)=c$ with increasing $c$, whereas the trajectory $x=t,y=-1\ (t\leq 0)$ crosses level curves $f(x,y)=c$ with decreasing $c$
+    \item $f(-1/2,y)$ is an increasing function of $y$ on $(-\infty,\infty)$ since the trajectory $x=-1/2,y=t$ crosses level curves $f(x,y)=c$ with increasing $c$.
+  \end{enumerate}
+\end{pracsol}
+\begin{practice}p.889 \#1\end{practice}
+\begin{pracsol}
+  The function $f(x,y)=x(2xy-3)^2$ is the product of two functions, $(x,y)\mapsto x$ and $(x,y)\mapsto (2xy-3)^2$ that are continuous at all points. Therefore, $f$ is continuous at all points and
+  \[\lim_{(x,y)\mapsto(2,3)}f(x,y)=f(2,3)=162.\]
+\end{pracsol}
+\begin{practice}p.889 \#3\end{practice}
+\begin{pracsol}
+  The function $f(x,y)=x^2y-x$ is continuous at all points and $x\mapsto\sqrt x$ is continuous at $f(4,2)$. Therefore,
+  \[\lim_{(x,y)\mapsto (4,2)}\sqrt{f(x,y)}=\sqrt{f(4,2)}=\sqrt{28}=2\sqrt7.\]
+\end{pracsol}
+\begin{practice}p.889 \#5\end{practice}
+\begin{pracsol}
+  The function $f(x,y)=y^2+xy$ is continuous at all points and $x\mapsto \ln x$ is continuous at $f(-1,4)$. Therefore,
+  \[\lim_{(x,y)\mapsto(-1,4)}\ln(f(x,y))=\ln(f(-1,4))=\ln(12).\]
+\end{pracsol}
+\begin{practice}p.889 \#15\end{practice}
+\begin{pracsol}
+  Approach along the $x$-axis and the limiting value is 0. Approach along the line $y=x$ and the limiting value is 1.
+\end{pracsol}
+\begin{practice}p.889 \#17\end{practice}
+\begin{pracsol}
+  Approach along the line $y=x,\ x>0$, and the limiting value is 1. Approach along the line $y=x,\ x<0$, and the limiting value is $-1$.
+\end{pracsol}
+\end{document}

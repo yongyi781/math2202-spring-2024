@@ -1,0 +1,42 @@
+\documentclass[11pt,oneside]{amsart}
+\input{../preamble}
+
+\title{MATH2202 Spring 2024\\
+Discussion 6}
+\date{February 27, 2024}
+
+\theoremstyle{definition}
+\newtheorem{question}{Question}
+
+\begin{document}
+  \maketitle
+
+  The TA will demonstrate 1(a) and 1(b).
+
+  \begin{problem}
+    Chain rule exercises.
+    \begin{enumerate}[(a)]
+      \item Calculate $\frac d{ds}f(x(s),y(s))$ where $f(x,y)=x-y^3$, $x(s)=e^s$ and $y(s)=e^{-s}$. Use the chain rule, then calculate directly to check yourself.
+      \item Calculate $\frac{\partial}{\partial s}f(3s-4t,5s+6t)$ where $f$ is the same as in part (a).
+      \item Calculate $\frac{\partial}{\partial t}f(e^s,e^{-t})$ with the same $f$ as in part (a).
+    \end{enumerate}
+  \end{problem}
+
+  \begin{problem}
+    Open up Mathematica (or Desmos 3D (\url{https://www.desmos.com/3d}) on your browser, if you haven't downloaded Mathematica) and consider the function from class on Monday:
+    \[f(x)=\begin{cases}\frac{xy}{x^2+y^2}&\text{if }(x,y)\neq(0,0)\\0&\text{if }(x,y)=(0,0).\end{cases}\]
+    Type in $xy/(x^2+y^2)$ if you're on Desmos or \texttt{Plot3D[x y/(x$^2$ + y$^2$), \{x, -1, 1\}, \{y, -1, 1\},
+    AxesLabel -> Automatic]} if you're on Mathematica. (Make sure there's a space between \texttt{x} and \texttt{y} in the numerator for the Mathematica input.) Don't worry about the second part of the piecewise function; it doesn't really affect the visualization.
+    \begin{enumerate}[(a)]
+      \item Rotate the figure until you get a feel for what it looks like. Can you see the path $(t,mt)$ for which $\lim_{t\to 0}f(t,mt)=\frac12$? How about the path for which $\lim_{t\to 0}f(t,mt)=-\frac12$? What are the values of $m$ in each case?
+      \item Check algebraically that $f(0,y)$ and $f(x,0)$ are both the constant 0 function. Then see if you can see this fact in the plot you made.
+    \end{enumerate}
+  \end{problem}
+
+  \begin{problem}
+    Figure out the equation of the tangent plane to $f(x,y)=x^2+y^2$ at $(1,2)$ (the example from class), then plot both the function and the tangent plane in Mathematica or Desmos to see how tangent planes work. To plot two functions in the same plot in Mathematica, say $f(x,y)$ and $g(x,y)$ you would type \texttt{Plot3D[\{f(x,y), g(x,y)\}, \{x,-a,a\},\{y,-b,b\}]} for some choice of numbers $a$ and $b$. (I would suggest $a=b=5$ for this question.)
+
+    Then try this for $f(x,y)=\sin(x+y)$ at $(\pi/3,\pi/3)$.
+  \end{problem}
+
+\end{document}

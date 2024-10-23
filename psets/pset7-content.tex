@@ -1,0 +1,230 @@
+\maketitle
+
+Due: Wednesday, March 27 at 11:59 pm.
+
+\section{Practice problems -- do not submit}
+\subsection{12.2. Integration over more general regions}
+\begin{practice}p.982 \#1\end{practice}
+\begin{pracsol}
+  This region is $x$-simple. The functions that form this region's boundary are $y\mapsto -2y-1$ and $y\mapsto -y^2+2$ for $-1\leq y\leq 3$.
+  \begin{center}
+    \begin{tikzpicture}
+      \begin{axis}[axis lines=middle, axis equal, xmin=-10, xmax=3, ymin=-4, ymax=4, xlabel=$x$, ylabel=$y$]
+        \addplot[name path=A, domain=-1:3, variable=t, samples=50] (-t^2+2, t);
+        \addplot[name path=B, domain=-1:3, variable=t] (-2*t-1, t);
+        \addplot[blue!50, opacity=0.5] fill between[of=A and B];
+%         \fill[gray,opacity=0.2] plot[domain=0:1] (-2*\x-1,\x) -- plot[domain=-1:3]
+% (-\x*\x+2,\x);
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
+\end{pracsol}
+\begin{practice}p.982 \#5\end{practice}
+\begin{pracsol}
+  This region is $y$-simple. The functions that form its boundary are $x\mapsto x^{\frac32}$ and $x\mapsto 6x-1$ for $1\leq x\leq 3$.
+  \begin{center}
+    \begin{tikzpicture}
+      \begin{axis}[axis lines=middle, axis equal, xmin=-1, xmax=3, ymin=-1, ymax=20, xlabel=$x$, ylabel=$y$]
+        \addplot[name path=A, domain=1:3, samples=50] (x, {x^(3/2)});
+        \addplot[name path=B, domain=1:3] (x, 6*x-1);
+        \addplot[blue!50, opacity=0.5] fill between[of=A and B];
+%         \fill[gray,opacity=0.2] plot[domain=0:1] (-2*\x-1,\x) -- plot[domain=-1:3]
+% (-\x*\x+2,\x);
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
+\end{pracsol}
+\begin{practice}p.982 \#11\end{practice}
+\begin{pracsol}
+  \[\begin{split}
+    \int_{\frac{\pi}4}^{\frac{\pi}2}\left(\int_0^{\sin(y)}5\,dx\right)\,dy &= \int_{\frac{\pi}4}^{\frac{\pi}2}\left(5x\Big|_{x=0}^{\sin(y)}\right)\,dy \\
+    &= 5\int_{\frac{\pi}{4}}^{\frac{\pi}{2}}\sin(y)\,dy\\
+    &= 5(-\cos(y))\Big|_{\frac{\pi}4}^{\frac{\pi}2}\\
+    &= 5\left(0+\frac{1}{\sqrt2}\right)\\
+    &= \frac{5}{\sqrt2}.
+  \end{split}\]
+\end{pracsol}
+\begin{practice}p.983 \#35\end{practice}
+\begin{pracsol}
+  This is an $x$-simple region, $\mathcal R=\{(x,y)\mid 0|leq y\leq 1,-y\leq x\leq \sqrt y\}$. The integral evaluates as follows.
+  \[\begin{split}
+    \int_0^1\left(\int_{-y}^{\sqrt y} y\,dx\right)\,dy &= \int_0^1\left(yx\Big|_{x=-y}^{\sqrt y}\right)\,dy\\
+    &= \int_0^1(y^{\frac32}+y^2)\,dy\\
+    &= \left(\frac{2y^{\frac52}}5+\frac{y^3}{3}\right)\Big|_0^1\\
+    &= \frac{11}{15}.
+  \end{split}\]
+\end{pracsol}
+
+\subsection{12.3. Calculation of volumes of solids}
+\begin{practice}p.989 \#2\end{practice}
+\begin{pracsol}
+  The given curves intersect when $y=-2$ and $y=-1$. The volume is
+  \[\int_{-2}^{-1}\int_{2y^2+4y+4}^{y^2+y+2}(5+x)\,dx\,dy=\frac{77}{60}.\]
+\end{pracsol}
+\begin{practice}p.989 \#8\end{practice}
+\begin{pracsol}
+  The given curves intersect when $x=-1$ and $x=2$. The volume is
+  \[\int_{-1}^2\int_{x^2}{5-(x-1)^2}(5+x)\,dy\,dx=\frac{99}2.\]
+\end{pracsol}
+\begin{practice}p.989 \#21\end{practice}
+\begin{pracsol}
+  The planar region forming the base of the solid is $\mathcal R=\{(x,y)\mid 0\leq x\leq 4, x^{\frac12}\leq y\leq x+2\}$. The volume integral eavluates as follows:
+  \[\begin{split}
+    \int_0^4\left(\int_{x^{\frac12}}^{x+2}(x+2y)\,dy\right)dx &= \int_0^4\left((xy+y^2)\Big|_{y=x^{\frac12}}^{x+2}\right)\,dx\\
+    &= \int_0^4 (x(x+2)-x^{\frac12})+(x+2)^2-x)\,dx\\
+    &= \left(\frac{x^3}3+\frac{x^2}2-\frac{2x^{\frac52}}{5}+\frac{(x+2)^2}{3}\right)\Big|_0^4\\
+    &=\frac{1288}{15}.
+  \end{split}\]
+\end{pracsol}
+
+\subsection{12.4. Polar coordinates}
+\begin{practice}p.998 \#4\end{practice}
+\begin{pracsol}
+  Let $P,Q,R,S$ respectively denote the points with polar coordinates $(6,\frac{9\pi}{4})$, $(-6,\frac{-9\pi}{4})$, $(6,-\frac{9\pi}{4})$, and $(-6,-\frac{9\pi}{4})$. Then, in rectangular coordinates, we have
+  \[P=(3\sqrt2,3\sqrt2), Q=(-3\sqrt2,-3\sqrt2), R=(3\sqrt2,-3\sqrt2),\text{ and } S=(-3\sqrt2,3\sqrt2).\]
+  \begin{center}
+    \begin{tikzpicture}
+      \begin{axis}[axis lines=middle, axis equal, xmin=-5, xmax=5, ymin=-5, ymax=5, xlabel=$x$, ylabel=$y$]
+        \fill (4.24, 4.24) circle (2pt) node[below left] {$P$};
+        \fill (-4.24, -4.24) circle (2pt) node[above right] {$Q$};
+        \fill (4.24, -4.24) circle (2pt) node[above left] {$R$};
+        \fill (-4.24, 4.24) circle (2pt) node[below right] {$S$};
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
+\end{pracsol}
+\begin{practice}p.998 \#11\end{practice}
+\begin{pracsol}
+  $x=y=0$.
+\end{pracsol}
+\begin{practice}p.998 \#16\end{practice}
+\begin{pracsol}
+  The rectangular coordinates are $(3,0)$.
+\end{pracsol}
+\begin{practice}p.998 \#33\end{practice}
+\begin{pracsol}
+  As $\theta$ increases from 0 to $\frac{\pi}2$, $r$ increases from 0 to 1; $r$ continues to increase from 1 to 2 as $\theta$ increases from $\frac{\pi}{2}$ to $\pi$. This produces the top half of the curve.
+
+  Checking symmetry $(\theta\mapsto -\theta)$ shows that the curve is symmetric with the $x$-axis. See the sketch below.
+  \begin{center}
+    \begin{tikzpicture}
+      \begin{axis}[axis lines=middle, axis equal, xmin=-2, xmax=0, ymin=-1.5, ymax=1.5, xlabel=$x$, ylabel=$y$]
+        \addplot[domain=0:2*pi, variable=t, samples=100] ({(1-cos(deg(t))) * cos(deg(t))}, {(1-cos(deg(t))) * sin(deg(t))});
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
+\end{pracsol}
+
+\subsection{12.5. Integrating in polar coordinates}
+\begin{practice}p.1012 \#1\end{practice}
+\begin{pracsol}
+  The polar curve $r=1-\sin(\theta)$ is heart-shaped, winding around the origin once for $0\leq \theta\leq 2\pi$. The area enclosed is
+  \[\begin{split}
+    \frac12\int_0^{2\pi}(1-\sin(\theta))^2\,d\theta &= \frac12\int_0^{2\pi}(1-2\sin(\theta)+\sin^2(\theta))\,d\theta\\
+    &= \frac12\left(2\pi+\int_0^{2\pi}\sin^2(\theta)\,d\theta\right)\\
+    &= \pi+\frac{\pi}{2}\\
+    &= \frac{3\pi}{2}.
+  \end{split} \]
+  Note. The symmery in the graphs of $\sin(\theta)$ and $\cos(\theta)$ and the fact that $\sin^2(\theta)+\cos^2(\theta)=1$ imply that
+  \[\int_0^{2\pi}\sin^2(\theta)\,d\theta=\int_0^{2\pi}\cos^2(\theta)\,d\theta=\pi.\]
+  We will use thie fact, and ones like it such as
+  \[\int_0^\pi\sin^2(\theta)\,d\theta =\int_0^\pi\cos^2(\theta)\,d\theta=\frac{\pi}2,\]
+  whenever necessary in the integrals that follow.
+\end{pracsol}
+\begin{practice}p.1012 \#9\end{practice}
+\begin{pracsol}
+  Each of these polar curves is a circle passing through the origin. The circle $r=\sin(\theta)$ is swept out when $0\leq\theta\leq\pi$ and the circle $r=\cos(\theta)$ is swept out when $-\frac{\pi}{2}\leq\theta\leq\frac{\pi}{2}$ (draw a picture). The area of their intersection, which is in the first quadrant, is twice the area enclosed by the curve $r=\sin(\theta)$ for $0\leq\theta\leq\frac{\pi}4$.
+  \[\begin{split}
+    A &= 2\cdot\frac12\int_0^{\frac{\pi}4}\sin^2(\theta)\,d\theta \\
+    &= \frac12\int_0^{\frac{\pi}4}(1-\cos(2\theta))\,d\theta\\
+    &= \frac12\left(\theta-\frac{\sin(2\theta)}2\right)\Big|_0^{\frac{\pi}4}\\
+    &= \frac{\pi}8-\frac14.
+  \end{split}\]
+\end{pracsol}
+\begin{practice}p.1012 \#39. (Remember your $u$-substitution.)\end{practice}
+\begin{pracsol}
+  The area is
+  \begin{multline*}
+    \frac12\int_{\frac{\pi}6}^{\frac{5\pi}6}(3\sin(\theta))^2\,d\theta -\frac12\int_{\frac{\pi}6}^{\frac{5\pi}6}(1+\sin(\theta))^2\,d\theta\\
+    \begin{aligned}
+    &= \frac12\int_{\frac{\pi}6}^{\frac{5\pi}6}8\sin(\theta)\,d\theta-\frac12\int_{\frac{\pi}6}^{\frac{5\pi}6}d\theta-\int_{\frac{\pi}6}^{\frac{5\pi}6}\sin(\theta)\,d\theta\\
+    &= 2\int_{\frac{\pi}6}^{\frac{5\pi}6}(1-\cos(2\theta))\,d\theta-\frac12\int_{\frac{\pi}6}^{\frac{5\pi}6}\,d\theta-\int_{\frac{\pi}6}^{\frac{5\pi}6}\sin(\theta)\,d\theta\\
+    &= \left(\frac{4\pi}{3}+\sqrt3\right)-\frac{\pi}{3}-\sqrt3\\
+    &= \pi.
+    \end{aligned}
+  \end{multline*}
+\end{pracsol}
+
+\newpage
+
+\section{Homework problems -- submit these}
+
+{\color{red}\textbf{Reminder}: You should always master the practice problems before starting homework problems!}
+
+Because of the low quantity of problems, each problem this week is worth double points (6 points).
+
+\begin{problem}
+  Find the volume in the first octant that is inside the cylinder $x^2+y^2=1$ and below the surface $z=xy$.
+\end{problem}
+\begin{solution}
+  If you plot the cylinder and the surface in 3D, you can see that the 3D region inside the cylinder and below the surface can also be expressed as the 3D region below the surface $z=xy$ and lying over the quarter-disk $x^2+y^2\leq 1,x\geq 0,y\geq 0$ in the plane.
+
+  The solid is between the region $\mathcal R=\{(x,y)\mid 0\leq \leq 1, 0\leq y\leq\sqrt{1-x^2}\}$ and the surface $z=xy$. Its volume can be calculated as follows.
+  \[\begin{split}
+    V &= \int_0^1\left(\int_0^{\sqrt{1-x^2}} xy\,dy\right)\,dx\\
+     &= \int_0^1\left(\frac{x^2}{2}\right)\Big|_{y=0}^{\sqrt{1-x^2}}\,dx\\
+    &= \frac12\int_0^1 x(1-x^2)\,dx\\
+    &= \frac18.
+  \end{split}\]
+\end{solution}
+
+\begin{problem}
+  A regular $N$-gon is inscribed in a circle of radius $r$ that is centered at the origin. If one of the vertices is on the positive $x$-axis, then what are the polar coordinates of the vertices?
+\end{problem}
+\begin{solution}
+  If each vertex is connected to the origin, then the angle between consecutive rays is $\frac{2\pi}N$. Therefore, for $1\leq j\leq N$, the pair of polar coordinates of the $j$th vertx is $\left(r,\frac{2(j-1)\pi}{N}\right)$.
+\end{solution}
+
+\begin{problem}
+  Find the area of the region inside the cardioid $r=1-\cos\theta$ and also inside the circle $r=\cos\theta$. (You should probably sketch the regions first before attempting to find the area.)
+\end{problem}
+\begin{solution}
+  The cardioid and the circle intersect in two regions of the same size, one in the first quadrant and the other in the fourth. Draw a picture. The points of intersection are at the angles $\theta$ that satisfy the equation $1-\cos(\theta)=\cos(\theta)$. That is, $\cos(\theta)=\frac12$, so $\theta=\pm\frac\pi3$. The area can be found with the following calculation. (Note the shifty move in line 3.)
+  \[\begin{split}
+    A &= 2\cdot\left(\frac12\int_0^{\frac\pi3}(1-\cos(\theta))^2\,d\theta+\frac12\int_{\frac\pi3}^{\frac\pi2}(\cos(\theta))^2\,d\theta\right)\\
+    &= \int_0^{\frac\pi3}(1-2\cos(\theta)+\cos^2(\theta))\,d\theta+\int_{\frac\pi3}^{\frac\pi2}\cos^2(\theta)\,d\theta\\
+    &= (\theta-2\sin(\theta))\Big|_0^{\frac\pi3}+\int_0^{\frac\pi2}\cos^2(\theta)\,d\theta\\
+    &= \frac\pi3-\sqrt3+\frac\pi4\\
+    &=\frac{7\pi}{12}-\sqrt3.
+  \end{split}\]
+\end{solution}
+
+\begin{problem}
+  Mathematica says that the indefinite integral of $1/(1+x^3)$ with respect to $x$ is
+  \[\int\frac1{1+x^3}\,dx=\frac16\left(-\log(x^2-x-1)+2\log(x+1)+2\sqrt3\tan^{-1}\left(\frac{2x-1}{\sqrt3}\right)\right)+C.\]
+  That looks horrible. Nevertheless, it turns out that
+  \[\int_0^4\int_{\sqrt x}^2\frac 1{1+y^3}\,dy\,dx=\frac23\log3,\]
+  and that there is a non-horrible way to calculate it. Calculate it the non-horrible way.
+\end{problem}
+\begin{solution}
+  It turns out swapping the bounds of integration is the right move. After sketching the region $\mathcal R=\{(x,y)\mid 0\leq x\leq 4,\sqrt2\leq y\leq 2\}$, we see that $\mathcal R$ can be reparametrized as $\{(x,y)\mid 0\leq y\leq 2,0\leq x\leq y^2\}$. So our integral is calculation is equivalent to
+  \[\begin{split}
+    \int_0^2\int_0^{y^2}\frac{1}{1+y^3}\,dx\,dy &= \int_0^2\frac{x}{1+y^3}\Big|_{x=0}^{y^2}\,dy\\
+    &= \int_0^2 \frac{y^2}{1+y^3}\,dy\\
+    &\overset{u=1+y^3}{=} \frac13\int_{1}^{9}\frac{du}u\\
+    &= \frac13\log(u)\Big|_{u=1}^9\\
+    &= \frac 13(\log 9-\log 1)\\
+    &= \frac 23\log 3.
+  \end{split}\]
+\end{solution}
+
+\begin{problem}
+  How difficult was each problem? Rate each problem (and part) on a difficulty scale from 1 to 7, where 1 means ``super easy, barely an inconvenience!'' and 7 means ``hardest problem I've ever done.''
+\end{problem}
+
+\newpage
+
+\section{Hints}
+\begin{hint}[Hint for 4]
+  In case you missed it, you do not want to use the horrible formula.
+\end{hint}

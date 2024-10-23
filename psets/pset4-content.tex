@@ -1,0 +1,341 @@
+\maketitle
+
+Due: Wednesday, February 28 at 11:59 pm.
+
+\section{Practice problems -- do not submit}
+
+\subsection*{11.3. Limits and continuity}
+\begin{practice}p.889 \#29\end{practice}
+\begin{pracsol}
+  The limit is 0. This is because, by l'Hôpital's rule, $\lim_{t\to 0^+}t\ln(t)=0$ (verify). Therefore,
+  \[\begin{split}
+    0\leq |f(x,y)| &= x^2|\ln(x^2+y^2)|\\
+    &\leq (x^2+y^2)|\ln(x^2+y^2)|\xrightarrow{(x,y)\to(0,0)}0.
+  \end{split}\]
+  We conclude by applying the squeeze theorem for limits: $x^2|\ln(x^2+y^2)|$ is greater than or equal to 0, while also less than or equal to another function, $(x^2+y^2)|\ln(x^2+y^2)|$, that goes to 0 as $(x,y)$ goes to $(0,0)$.
+\end{pracsol}
+
+\subsection*{11.4. Partial derivatives}
+\begin{practice}p.897 \#1\end{practice}
+\begin{pracsol}
+  $\phi(x)=f(x,1)=2x+1$ and $\psi(y)=f(5,y)=10+y^3$. Therefore, $\phi'(x)=2,\psi'(y)=3y^2$, and
+  \[\phi'(5)=2\text{ and }\psi'(1)=3.\]
+  $\frac{\partial f}{\partial x}(x,y)=2$ and $\frac{\partial f}{\partial y}(x,y)=3y^2$. Therefore,
+  \[\frac{\partial f}{\partial x}(5,1)=2\text{ and }\frac{\partial f}{\partial y}(5,1)=3.\]
+\end{pracsol}
+
+\begin{practice}p.897 \#3\end{practice}
+\begin{pracsol}
+  $\phi(x)=f(x,-1)=4$ and $\psi(y)=f(2,y)=7-3y^4$. Therefore, $\phi'(x)=0,\psi'(y)=-12y^3$, and
+  \[\phi'(2)=0\text{ and }\psi'(-1)=12.\]
+  $\frac{\partial f}{\partial x}(x,y)=0$ and $\frac{\partial f}{\partial y}(x,y)=-12y^3$. Therefore,
+  \[\frac{\partial f}{\partial x}(2,-1)=0\text{ and }\frac{\partial f}{\partial y}(2,-1)=-12.\]
+\end{pracsol}
+
+\begin{practice}p.897 \#5\end{practice}
+\begin{pracsol}
+  $\phi(x)=f(x,1/2)=\cos(x/4)$ and $\psi(y)=f(2,y)=\cos(\pi y^2)$ so $\phi'(x)=-\sin(x/4)/4$ and $\psi'(y)=-2\pi y\sin(\pi y^2)$. Therefore,
+  \[\phi'(\pi)=-\sqrt2/8\text{ and }\psi'(1/2)=-\pi\sqrt2/2.\]
+  $\frac{\partial f}{\partial x}(x,y)=-y^2\sin(xy^2)$ and $\frac{\partial f}{\partial y}(x,y)=-2xy\sin(xy^2)$. Therefore,
+  \[\frac{\partial f}{\partial x}(\pi,1/2)=-\frac{\sqrt2}8\text{ and }\frac{\partial f}{\partial y}(\pi,1/2)=-\frac{\pi\sqrt2}{2}.\]
+\end{pracsol}
+
+\begin{practice}p.897 \#11\end{practice}
+\begin{pracsol}
+  \begin{align*}
+    f_x(x,y)&=2xy-y, &f_{xx}(x,y)&=2y, &f_{xy}(x,y)&=2x-1;\\
+    f_y(x,y)&=x^2-x+5y^4, &f_{yy}(x,y)&=20y^3, &f_{yx}(x,y)&=2x-1.
+  \end{align*}
+\end{pracsol}
+
+\begin{practice}p.897 \#17\end{practice}
+\begin{pracsol}
+  \begin{align*}
+    f_x(x,y) &= \frac1{x-y}, &f_{xx}(x,y) &= -\frac1{(x-y)^2}, &f_{xy}(x,y) &= \frac1{(x-y)^2};\\
+    f_y(x,y) &= \frac{x-2y}{xy-y^2}, &f_{yy}(x,y) &= \frac{2xy-2y^2-x^2}{(xy-y^2)^2}, &f_{yx}(x,y) &= \frac1{(x-y)^2}.
+  \end{align*}
+\end{pracsol}
+
+\begin{practice}p.897 \#35\end{practice}
+\begin{pracsol}
+  \begin{align*}
+    f_x(x,y,z) &= y\exp(xy-yz);\\
+    f_y(x,y,z) &=(x-z)\exp(xy-yz);\\
+    f_z(x,y,z) &=-y\exp(xy-yz);\\
+    f_{xy}(x,y,z) &= (1+xy-yz)\exp(xy-yz);\\
+    f_{xz}(x,y,z) &= -y^2\exp(xy-yz);\\
+    f_{yz}(x,y,z) &= -(1+xy-yz)\exp(xy-yz);\\
+    f_{xx}(x,y,z) &= y^2\exp(xy-yz);\\
+    f_{yy}(x,y,z) &= (x-z)^2\exp(xy-yz);\\
+    f_{zzz}(x,y,z) &= y^2\exp(xy-yz).
+  \end{align*}
+\end{pracsol}
+
+\begin{practice}p.897 \#45\end{practice}
+\begin{pracsol}
+  Calculate the partials for $f(x,y)=\frac{x-y}{x+y}$.
+  \begin{align*}
+    f_x(x,y) &= \frac{2y}{(x+y)^2},&f_{xx}(x,y) &=-\frac{4y}{(x+y)^3}, &f{xy}(x,y) &= \frac{2(x-y)}{(x+y)^3},\\
+    f_y(x,y) &= -\frac{2x}{(x+y)^2}, &f_{yy}(x,y) &= \frac{4x}{(x+y)^3}, &f_{yx}(x,y) &= \frac{2(x-y)}{(x+y)^3}.
+  \end{align*}
+\end{pracsol}
+
+\subsection*{11.5. Differentiability and the chain rule}
+\begin{practice}p.911 \#1\end{practice}
+\begin{pracsol}
+  \begin{enumerate}[(a)]
+    \item (Chain rule)
+    \[\begin{split}
+      \frac{dz}{ds} &= \frac{\partial z}{\partial x}\cdot\frac{dx}{ds}+\frac{\partial z}{\partial y}\cdot\frac{dy}{ds}\\
+      &= 2xy\cdot 3s^2 + (x^2-3y^2)\cdot(-s^{-2})\\
+      &= 2(s^3-1)s^{-1}\cdot 3s^2-\frac{(s^3-1)^2-3(s^{-1})^2}{s^2}\\
+      &= 5s^4-4s-s^{-2}+3s^{-4}.
+    \end{split}\]
+
+    \item (Substitution)
+    \[\begin{split}
+      z &=f(s^3-1,s^{-1})=(s^3-1)^2s^{-1}-(s^{-1})^3\\
+      &= s^5-2s^2+s^{-1}-s^{-3}.
+    \end{split}\]
+      Therefore, $\frac{dz}{ds}=5s^4-4s-s^{-2}+3s^{-4}$.
+  \end{enumerate}
+\end{pracsol}
+
+\begin{practice}p.911 \#3\end{practice}
+\begin{pracsol}
+  \begin{enumerate}[(a)]
+    \item (Chain rule)
+    \[\begin{split}
+      \frac{dz}{ds} &= \frac{\partial z}{\partial x}\cdot\frac{dx}{ds}+\frac{\partial z}{\partial y}\cdot\frac{dy}{ds}\\
+      &= \frac{y^2-x^2}{(x^2+y^2)^2}\cdot(-\sin(s))-\frac{2xy}{(x^2+y^2)^2}\cdot\cos(s)\\
+      &= (\sin^2(s)-\cos^2(s))\cdot(-\sin(s))-2\cos(s)\sin(s)\cdot\cos(s)\\
+      &= -\sin^3(s)-\cos^2(s)\sin(s)\\
+      &= -\sin(s)(\sin^2(s)+\cos^2(s))=-\sin(s).
+    \end{split}\]
+
+    \item (Substitution)
+    \[z=f(\cos(s),\sin(s))=\frac{\cos(s)}{\cos^2(s)+\sin^2(s)}=\cos(s).\]
+      Therefore, $\frac{dz}{ds}=-\sin(s)$.
+  \end{enumerate}
+\end{pracsol}
+
+\begin{practice}p.911 \#11\end{practice}
+\begin{pracsol}
+  Partial derivative calculations using the chain rule
+  \[\begin{split}
+    \frac{\partial z}{\partial s} &= \frac{\partial z}{\partial x}\cdot\frac{\partial x}{\partial s}+\frac{\partial z}{\partial y}\cdot\frac{\partial y}{\partial s}\\
+    &= 2x\cdot 3t\cos(3st)-7y^6\cdot(-3t\sin(3st))\\
+    &= 2\sin(3st)\cdot 3t\cos(3st)-7\cos^6(3st)\cdot(-3t\sin(3st))\\
+    &= 3t\sin(3st)\cos(3st)(2+7\cos^5(3st)).
+  \end{split}\]
+  A similar calculation will show that $\partial z/\partial t=3s\sin(3st)\cos(3st)(2+7\cos^5(3st))$.
+\end{pracsol}
+
+\begin{practice}p.911 \#13\end{practice}
+\begin{pracsol}
+  Partial derivative calculations using the chain rule
+  \[\begin{split}
+    \frac{\partial z}{\partial s} &= \frac{\partial z}{\partial x}\cdot\frac{\partial x}{\partial s}+\frac{\partial z}{\partial y}\cdot\frac{\partial y}{\partial s}\\
+    &= 3ye^{exy}\cdot t^{-1}+3xe^{3xy}\cdot(-ts^{-2})\\
+    &= 3(ts^{-1})e^3\cdot t^{-1}-3(st^{-1})e^3\cdot(ts^{-2})\\
+    &= 0.
+  \end{split}\]
+  A similar calculation will show that $\partial z/\partial t=0$ also.
+\end{pracsol}
+
+\begin{practice}p.911 \#21\end{practice}
+\begin{pracsol}
+  Derivative calculation using the chain rule
+  \[\begin{split}
+    \frac{dw}{ds} &= \frac{\partial w}{\partial x}\cdot\frac{\partial x}{\partial s}+\frac{\partial w}{\partial y}\cdot\frac{\partial y}{\partial s}+\frac{\partial w}{\partial z}\cdot\frac{\partial z}{\partial s}\\
+    &=\frac{x}{\sqrt{x^2-y^3+z}}\cdot 9s^2-\frac{3y^2}{2\sqrt{x^2-y^3+z}}\cdot 4s+\frac1{2\sqrt{x^2-y^3+z}}\cdot s^{-1}\\
+    &=\frac{54s^5-48s^5+s^{-1}}{2\sqrt{9s^6-8s^6+\ln(s)}}\\
+    &= \frac{6s^5+s^{-1}}{2\sqrt{s^6+\ln(s)}}.
+  \end{split}\]
+\end{pracsol}
+
+\begin{practice}p.911 \#25\end{practice}
+\begin{pracsol}
+  Derivative calculation using the chain rule
+  \[\begin{split}
+    \frac{dw}{ds}&=\frac{\partial w}{\partial x}\cdot\frac{\partial x}{\partial s}+\frac{\partial w}{\partial y}\cdot\frac{\partial y}{\partial s}+\frac{\partial w}{\partial z}\cdot\frac{\partial z}{\partial s}\\
+    &= \frac{2x}{y^2+z^2}\cdot 8^s\ln(8)-\frac{2x^2y}{(y^2+z^2)^2}\cdot 2^s\ln(2)-\frac{2x^2z}{(y^2+z^2)^2}\cdot 4^s\ln(4)\\
+    &= \frac{2x(y^2+z^2)\cdot x\ln(8)-2x^2y\cdot y\ln(2)-2x^2z\cdot z\ln(4)}{(y^2+z^2)^2}\\
+    &= \frac{6x^2(y^2+z^2)\ln(2)-2x^2(y^2+2z^2)\ln(2)}{(y^2+z^2)^2}\\
+    &= \frac{4x^2y^2+2x^2z^2}{(y^2+z^2)^2}\ln(2)\\
+    &=\frac{4\cdot 8^{2s}\cdot 2^{2s}+2\cdot 8^{2s}\cdot 4^{2s}}{(2^{2s}+4^{2s})^2}\ln(2)\\
+    &= \frac{2^2\cdot 2^{6s}\cdot 2^{2s}+2\cdot 2^{6s}\cdot 2^{4s}}{(2^{2s}+2^{4s})^2}\ln(2)\\
+    &= \frac{2^{8s+1}(2+2^{2s})}{2^{4s}(1+2^{2s})^2}\ln(2)\\
+    &= \frac{2^{4s+1}(2+2^{2s})}{(1+2^{2s})^2}\ln(2).
+  \end{split}\]
+\end{pracsol}
+
+\newpage
+
+\section{Homework problems -- submit these}
+
+\begin{problem}
+  Define
+  \[f(x,y)=\begin{cases}
+    \frac{xy(x^2-y^2)}{x^2+y^2} &\text{if }(x,y)\neq (0,0)\\
+    0&\text{if }(x,y)=(0,0).
+  \end{cases}\]
+  Calculate $f_x(0,0)$. To get the correct answer here you must use the limit definition of partial derivative.
+\end{problem}
+\begin{solution}
+  We have
+  \[\begin{split}
+    f_x(0,0) &= \lim_{h\to 0}\frac{f(0+h,0)-f(0,0)}h\\
+     &= \lim_{h\to 0}\frac{f(h,0)-f(0,0)}h\\
+    &= \lim_{h\to 0}\frac{\frac{(h)(0)(h^2-0^2)}{h^2+0^2}-0}{h}\\
+    &= \lim_{h\to 0}\frac{0}{h}\\
+    &= 0.
+  \end{split}\]
+\end{solution}
+
+\begin{problem}
+  Let $f(x,y)=\dfrac{xy^2}{x^2+y^4}$. This function does not have a limit as $(x,y)$ tends to $(0,0)$. However, you cannot detect this by looking only at straight-line paths approaching the origin.
+  \begin{enumerate}[(a)]
+    \item Calculate $\lim_{y\to 0}f(0,y)$.
+    \begin{solution}
+      We have
+      \[\begin{split}
+        \lim_{y\to 0}f(0,y) &= \lim_{y\to 0}\frac{(0)(y^2)}{0^2+y^4}\\
+        &= \lim_{y\to 0}\frac{0}{y^4}\\
+        &= 0.
+      \end{split}\]
+    \end{solution}
+    \item Given any slope $m\in\bR$, calculate $\lim_{x\to 0}f(x,mx)$.
+    \begin{solution}
+      We have
+      \[\begin{split}
+        \lim_{x\to 0}f(x,mx) &= \lim_{x\to 0}\frac{(x)(mx)^2}{x^2+(mx)^4}\\
+        &= \lim_{x\to 0}\frac{m^2x^3}{x^2+m^4x^4}\\
+        &= \lim_{x\to 0}\frac{m^2x}{1+m^4x^2}\\
+        &= \frac{0}{1}\\
+        &= 0.
+      \end{split}\]
+    \end{solution}
+    \item Deduce that if $(x,y)$ approaches the origin along any straight line, then the limit of $f(x,y)$ is 0.
+    \begin{solution}
+      If the straight line is not the vertical line, then this follows by part (b), using $m$ for the slope. If the straight is vertical, then this follows by part (a).
+    \end{solution}
+    \item However, show that $f(x,y)$ has a different limit as $(x,y)$ approaches $(0,0)$ along the parabolic path $x=y^2$.
+    \begin{solution}
+      We parametrize using the path $t\mapsto(t^2,t)$.
+      We have
+      \[\begin{split}
+        \lim_{t\to 0}f(t^2,t) &= \lim_{t\to 0}\frac{(t^2)(t^2)}{(t^2)^2+t^4}\\
+        &= \lim_{t\to 0}\frac{t^4}{2t^4}\\
+        &= \frac12.
+      \end{split}\]
+      This is different from 0.
+    \end{solution}
+  \end{enumerate}
+\end{problem}
+
+\begin{problem}
+  A \emph{harmonic function} is a two-variable function $f(x,y)$ satisfying the partial differential equation
+  \[\frac{\partial^2 f}{\partial x^2}+\frac{\partial^2 f}{\partial y^2}=0.\]
+  In other words, $f$ is harmonic iff the second partial derivative of $f$ with respect to $x$ plus the second partial derivative of $f$ with respect to $y$ is identically the zero function. Harmonic functions are extremely interesting in applications because they have the property that the value of a harmonic function at a point is the average of the values of the function in any circle centered at the point. (This is a non-obvious consequence of the differential equation.)
+  \begin{enumerate}[(a)]
+    \item Which of the following functions are harmonic?
+    \begin{enumerate}[(i)]
+      \item $u(x,y)=x^2-y^2$
+      \begin{solution}
+        $u_{xx}(x,y)=2$ and $u_{yy}(x,y)=-2$. Therefore $u_{xx}+u_{yy}=0$. Therefore $u$ is harmonic.
+      \end{solution}
+      \item $u(x,y)=xy$
+      \begin{solution}
+        $u_{xx}(x,y)=0$ and $u_{yy}(x,y)=0$. Therefore $u_{xx}+u_{yy}=0$. Therefore $u$ is harmonic.
+      \end{solution}
+      \item $u(x,y)=e^x\cos(y)$
+      \begin{solution}
+        $u_{xx}(x,y)=e^x\cos(y)$ and $u_{yy}(x,y)=-e^x\cos(y)$. Therefore $u_{xx}+u_{yy}=0$. Therefore $u$ is harmonic.
+      \end{solution}
+      \item $u(x,y)=x^2+y^2$
+      \begin{solution}
+        $u_{xx}(x,y)=2$ and $u_{yy}(x,y)=2$. Therefore $u_{xx}+u_{yy}=4$. Therefore $u$ is not harmonic.
+      \end{solution}
+      \item $u(x,y)=x^3$
+      \begin{solution}
+        $u_{xx}(x,y)=6x$ and $u_{yy}(x,y)=0$. Therefore $u_{xx}+u_{yy}=6x$, which is not the zero function. Therefore $u$ is not harmonic.
+      \end{solution}
+      \item $u(x,y)=e^{-x}\sin(y)$.
+      \begin{solution}
+        $u_{xx}(x,y)=e^{-x}\sin(y)$ and $u_{yy}(x,y)=-e^{-x}\sin(y)$. Therefore $u_{xx}+u_{yy}=0$. Therefore $u$ is harmonic.
+      \end{solution}
+    \end{enumerate}
+
+    \item Suppose we are given a positive integer $n$, and let $v_n(x,y)=(x^2+y^2)^n$. Show that
+    \[\left(\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}\right)v_n(x,y)=\frac{4n^2}{x^2+y^2}v_n(x,y).\]
+    Deduce that $v_n(x,y)$ cannot be harmonic for any $n\neq 0$.
+    \begin{solution}
+      We have
+      \begin{align*}
+        (v_n)_x &=n(x^2+y^2)^{n-1}\cdot 2x,\\
+        (v_n)_y &=n(x^2+y^2)^{n-1}\cdot 2y, \\
+        (v_n)_{xx}& =n(n-1)(x^2+y^2)^{n-2}\cdot 4x^2+2n(x^2+y^2)^{n-1}\\
+        &=2n(x^2+y^2)^{n-2}(2(n-1)x^2+(x^2+y^2)),\\
+        (v_n)_{yy} &=n(n-1)(x^2+y^2)^{n-2}\cdot 4y^2+2n(x^2+y^2)^{n-1}\\
+        &=2n(x^2+y^2)^{n-2}(2(n-1)y^2+(x^2+y^2)).
+      \end{align*}
+      Therefore,
+      \[\begin{split}
+        \left(\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}\right)v_n(x,y) &= (v_n)_{xx}+(v_n)_{yy}\\
+        &= 2n(x^2+y^2)^{n-2}(2(n-1)(x^2+y^2)+2(x^2+y^2))\\
+        &= 2n(x^2+y^2)^{n-2}(2n(x^2+y^2))\\
+        &= 4n(x^2+y^2)^{n-2}(x^2+y^2)\\
+        &= 4n(x^2+y^2)^{n-1}\\
+        &= \frac{4n^2}{x^2+y^2}v_n(x,y).
+      \end{split}\]
+      Since the function $\frac{4n^2}{x^2+y^2}v_n(x,y)$ is not the zero function for any nonzero $n$, we conclude that $v_n$ is not harmonic for any $n\neq 0$.
+    \end{solution}
+  \end{enumerate}
+\end{problem}
+
+\begin{problem}
+  Let $f(x,y)$ be any two-variable function, and suppose $c_1,c_2$ are two different real numbers (i.e.\ $c_1\neq c_2$). Assume that the level sets $L_{c_1}$ and $L_{c_2}$ for $f$ contain a common point $(x_0,y_0)$. Get a contradiction from this. Deduce that two different level sets for a function can never intersect each other.
+\end{problem}
+\begin{solution}
+  According to the assumptions, we have $f(x,y)$ a two-variable function, two distinct real numbers $c_1$ and $c_2$ satisfying $c_1\neq c_2$, and a point $(x_0,y_0)$ which belongs to both $L_{c_1}$ and $L_{c_2}$.
+
+  The fact that $(x_0,y_0)$ is in $L_{c_1}$ says that $f(x_0,y_0)=c_1$.
+
+  The fact that $(x_0,y_0)$ is in $L_{c_2}$ says that $f(x_0,y_0)=c_2$.
+
+  By the transitive property of equality, $c_1=c_2$. This contradicts the assumption that $c_1\neq c_2$.
+
+  So the assumption that $(x_0,y_0)$ belongs to both $L_{c_1}$ and $L_{c_2}$ must be false.
+
+  Since our choices of $f, c_1,c_2$ were arbitrary, it follows that for two different level sets for a function can never intersect each other.
+
+  \textbf{Remark}: Another way to get a contradiction was to use the fact that a function cannot give two different outputs for the same input. In this way, we get a contradiction between this fact and the two sentences $f(x_0,y_0)=c_1$ and $f(x_0,y_0)=c_2$.
+\end{solution}
+
+\begin{problem}
+  How difficult was each problem? Rate each problem (and part) on a difficulty scale from 1 to 7, where 1 means ``super easy, barely an inconvenience!'' and 7 means ``hardest problem I've ever done.''
+\end{problem}
+
+\newpage
+
+\section{Hints}
+\begin{hint}[Hint for what was formerly 1(a)]
+  1(a) has been removed. It asked to prove that $f$ is continuous at $(0,0)$. Read on if you are curious how to show this.
+
+  Testing with different paths can never be sufficient to prove a function is continuous at a point, only that it is not continuous at the point.
+
+  The easiest way to show that $f$ is continuous at $(0,0)$ is to use polar coordinates. It is a bit outside of what was covered in lecture. The ideas are as follows:
+  \begin{itemize}
+    \item The idea is to show that $\lim_{(x,y)\to (0,0)}f(x,y)=f(0,0)$.
+    \item Make the polar substitution $(x,y)=(r\cos\theta,r\sin\theta)$.
+    \item As $(x,y)\to 0$ we have $r\to 0$, so rewrite the limit as
+    \[\lim_{r\to 0}(\text{something in terms of $r$ and $\theta$}).\]
+    In fact the expression simplify to something like
+    \[\lim_{r\to 0}r(\cos\theta\sin\theta(\cos^2\theta-\sin^2\theta)).\]
+    \item Show that the absolute value of $(\cos\theta\sin\theta(\cos^2\theta-\sin^2\theta))$ is bounded by a constant no matter how $\theta$ behaves.
+    \item Conclude by the squeeze theorem that
+    \[\lim_{r\to 0}r(\cos\theta\sin\theta(\cos^2\theta-\sin^2\theta))=0.\]
+    \item Since $f(0,0)$ is also 0, conclude the function is continuous.
+  \end{itemize}
+\end{hint}

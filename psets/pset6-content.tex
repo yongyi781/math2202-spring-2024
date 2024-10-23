@@ -1,0 +1,255 @@
+\maketitle
+
+Due: Wednesday, March 20 at 11:59 pm.
+
+\section{Practice problems -- do not submit}
+\subsection{11.8. Maximum-Minimum Problems}
+\begin{practice}p.944 \#2\end{practice}
+\begin{pracsol}
+  We calculate $f_x(x,y)=2x-4y+6$ and $f_y(x,y)=-4x+2y+8$, which, when set equal to 0, result in the critical point $(11/3,10/3)$. At this critical point, the discriminant is $-12$. The negative value tells us that $(11/3,10/3)$ is a saddle point of $f$.
+\end{pracsol}
+\begin{practice}p.944 \#3\end{practice}
+\begin{pracsol}
+  Since $f_x(x,y)=3x^2-6y$ and $f_y(x,y)=-3y^2-6x$, the critical points are the simultaneous solutions for the equations
+  \begin{align*}
+    3x^2-6y &= 0\\
+    -3y^2-6x&=0.
+  \end{align*}
+  Solve the first equation for $y$: $y=x^2/2$, and substitute into the second equation to see that $x^4/4+2x=0$. Consequently, $x^4=-8x$ so either $x=0$, $y=0$, or $x=-2,y=2$.
+\end{pracsol}
+\begin{practice}p.944 \#13\end{practice}
+\begin{pracsol}
+  Since $f_x(x,y)=y^2+2xy+8y$ and $f_y(x,y)=2xy+x^2+8x$, the critical points are the simultaneous solutions for the equations
+  \begin{align*}
+    y^2+2xy+8y&=0\\
+    2xy+x^2+8x&=0.
+  \end{align*}
+  Clearly one possibility is $x=y=0$. Another is $y=0$ and $x^2+8x=0$ which implies that $y=0,x=-8$. A third possibility is $x=0$ and $y^2+8y=0$ which implies that $x=0,y=-8$. Finally, if $x$ and $y$ are both not zero, then the system simplifies to
+  \begin{align*}
+    y+2x+8 &=0\\
+    2y+x+8 &= 0.
+  \end{align*}
+  Double the first equationa dn subtract it from the second to eliminate $y:-3x-8=0$. Therefore, $x=-3/8,y=-3/8$ (verify). There are four points to test, $(0,0),(-8,0),(0,-8),(-8/3,-8/3)$. Note that $f_{xx}(x,y)=2y$, $f_{yy}(x,y)=2x$, and $f_{xy}(x,y)=2y+2x+8$. The classification is as below:
+  \begin{center}
+    \[\begin{array}{ccc}
+      \toprule
+      (x,y) & \mathcal D(f,(x,y)) & \text{Classification}\\
+      \midrule
+      (0,0) & (0)(0)-8^2<0 & \text{Saddle point}\\
+      (-8,0) & (0)(-16)-(-8)^2<0 & \text{Saddle point}\\
+      (0,-8) & (-16)(0) - (-8)^2<0 & \text{Saddle point}\\
+      (-8/3,-8/3) & (-16/3)(-16/3)-(-8/3)^2>0 & \text{Local maximum}\\
+      \bottomrule
+    \end{array}\]
+  \end{center}
+\end{pracsol}
+\begin{practice}p.944 \#16\end{practice}
+\begin{pracsol}
+  We calculate $f_x(x,y)=6(x+y)$ and $f_y(x,y)=6(y^2+2y+x)$, which yield two critical points: $(0,0)$ and $(-1,1)$. Because $\mathcal D(f,(0,0))=36>0$ and $f_{xx}(0,0)=6>0$, we conclude that $(0,0)$ is a local minimum of $f$. Because $\mathcal D(f,(-1,1))=-36<0$, we conclude that $(-1,1)$ is a saddle point of $f$.
+\end{pracsol}
+
+\subsection{11.9. Lagrange Multipliers}
+\begin{practice}p.954 \#4\end{practice}
+\begin{pracsol}
+  For $f(x,y)=x^2-y^2$ and $g(x,y)=x^2+(y-2)^2=9$, the vector equation $\nabla f=\lambda \nabla g$ is equivalent to the pair of scalar equations $2x=2\lambda x$ and $-2y=2\lambda(y-2)$. The first of these equations results in either $x=0$ or $\lambda=1$. Corresponding to $x=0$, we obtain $y=-1$ and $y=5$ from the constraint. Substituting $\lambda=1$ in the equation $-2y=2\lambda(y-2)$, we obtain $y=1$, which, in view of the constraints, leads to $x=\pm2\sqrt2$. Therefore, $(0,-1)$, $(0,5)$, $(-2\sqrt2,1)$, and $(2\sqrt2,1)$ are the critical points. By evaluation, we find that $f$ attains a maximum of 7 at the points $(-2\sqrt2,1)$ and $(2\sqrt2,1)$, whereas $f$ attains a minimum of $-25$ at $(0,5)$.
+
+  Note that we were able to conclude these were the maximum and minimum respectively without more detailed analysis because the constraint curve is bounded, unlike the example of $g(x,y)=(x+1)^2$ that we saw in class on Monday.
+\end{pracsol}
+\begin{practice}p.954 \#19\end{practice}
+\begin{pracsol}
+  Let $S$ be the surface area and let $V$ be the volume of the can. We seek $r$, $h$, and $\lambda$ such that $\nabla S=\lambda\nabla V$ and $V=V_0$. That is, $(4\pi r+2\pi h,2\pi r)=\lambda(2\pi rh,\pi r^2)$ and $\pi r^2h=V_0$. There are three scalar equations:
+  \begin{align*}
+    4\pi r+2\pi h &= 2\lambda\pi r h\\
+    2\pi r &= \lambda\pi r^2\\
+    \pi r^2h &= V_0.
+  \end{align*}
+  The second equation implies that $\lambda=2/r$. Substitute this into the first equation to obtain $2r+h=2h$. Consequently, $h=2r$, and the can with the minimum surface area has its height equal to the diameter of its base.
+
+  The minimum surface area is $S=2\pi r^2+2\pi r\cdot 2r=6\pi r^2$. This can be expressed in terms of the volume $V_0$ by observing that $V_0=\pi r^2h=2\pi r^3$ so $r=(V_0/(2\pi))^{1/3}$ and $S=6\pi(V_0/(2\pi))^{2/3}=3\sqrt[3]{2\pi V_0^2}$.
+\end{pracsol}
+\begin{practice}p.954 \#23. Note that it is easier to optimize the square of the distance function than the distance function.\end{practice}
+\begin{pracsol}
+  The square of the distance from a point $(x,y,z)$ on the ellipsoid to the point $(1,0,0)$ is $f(x,y,z)=(x-1)^2+y^2+z^2$. We will minimize this function subject to the constraint $g(x,y,z)=4$ where $g(x,y,z)=x^2+2y^2+4z^2$. The scalar equations derived from the Lagrange equation $\nabla f=\lambda\nabla g$ and the constraint are:
+  \begin{align*}
+    2(x-1) &= 2\lambda x\\
+    2y &= 4\lambda y\\
+    2z &= 8\lambda z\\
+    x^2+2y^2+4z^2 &= 4.
+  \end{align*}
+  Observe that $x\neq 0$ and $\lambda$ cannot be zero either for it were, then $x=1$, $y=0$, and $z=0$, and the constraint equation is not satisifed.
+
+  One possibility is $y=z=0$. If this is the case, then $x=\pm 2$ and the values of $f$ are 1 and 9.
+
+  Continuing our analysis of $y$ and $z$, note that one of them \emph{must} be zero. Indeed, if $y\neq 0$ and $z\neq 0$, then $\lambda=1/2$ and $\lambda=1/4$, so this is not possible. Consider the two remaining possibilities.
+  \begin{itemize}
+    \item $y=0,z\neq 0$. In this case, $\lambda=1/4$ implying that $2(x-1)=x/2$ so $x=4/3$ and, using the constraint equation, $z=\pm\sqrt5/3$. The value of $f$ at both points is 2/3.
+    \item $y\neq 0,z=0$. In this case, $\lambda=1/2$ implying that $2(x-1)=x$ so $x=2$ and, using the constraint equation, $y=0$, which is not possible.
+  \end{itemize}
+\end{pracsol}
+\begin{practice}p.955 \#27\end{practice}
+\begin{pracsol}
+  We wish to maximize $f(x,y)=y$ subject to the constraint $g(x,y)=3x^2+2xy+3y^2=24$. The Lagrange condition $\nabla f=\lambda\nabla g$ yields the first two scalar equations below. The constraint equation is also listed.
+  \begin{align*}
+    0 &= \lambda(6x+2y)\\
+    1 &= \lambda(2x+6y)\\
+    3x^2+2xy+3y^2 &= 24.
+  \end{align*}
+  Since $\lambda$ cannot be zero, the first equation implies that $y=-3x$. Substitute this into the constraint equation to obtain $3x^2-6x^2+27x^2=24$ so $x^2=1$ and $x=\pm 1$. Consequently, $y=\pm 3$ and the maximum $y$-value is 3.
+\end{pracsol}
+
+\subsection{12.1 Double integrals over rectangular regions.}
+\begin{practice}p.975 \#12\end{practice}
+\begin{pracsol}
+  \[\begin{split}
+    \iint_{\mathcal R}(\cos(x)-\sin(y))\,dA &= \int_0^{\pi/2}\int_{-\pi/3}^\pi(\cos(x)-\sin(y))\,dy\,dx\\
+    &= \int_0^{\pi/2}\left( \frac{4\pi}3\cos(x)-\frac32 \right)\,dx\\
+    &= \frac{7\pi}{12}.
+  \end{split}\]
+\end{pracsol}
+\begin{practice}p.975 \#18\end{practice}
+\begin{pracsol}
+  \[\begin{split}
+    \iint_\mathcal R(xe^y-ye^x)\,dA &= \int_0^1\int_1^2(xe^y-ye^x)\,dy\,dx\\
+     &= \int_0^1\left((e^2-e)x-\frac32e^x\right)\,dx\\
+     &= \frac{e^2}2-2e+\frac32.
+  \end{split}\]
+\end{pracsol}
+\begin{practice}p.975 \#26\end{practice}
+\begin{pracsol}
+  \[\begin{split}
+    \iint_\mathcal R(x+y)^3\,dA &= \int_1^2\int_2^{\sqrt3}(x+y)^3\,dy\,dx\\
+    &= \frac14\int_1^2((x+3)^4-(x+2)^4)\,dx \\
+    &= 66.
+  \end{split}\]
+\end{pracsol}
+
+\newpage
+
+\section{Homework problems -- submit these}
+
+\begin{problem}
+  I answered a very good question in class on Monday, about the second derivative test: What if the discriminant $\mathcal D(f,P)$ is positive (so we are in the min/max case), $f_{xx}(P)>0$, and $f_{yy}(P)<0$? I proceeded to explain that this cannot happen and why it cannot happen.
+
+  \begin{enumerate}[(a)]
+    \item Explain why it cannot happen.
+    \begin{solution}
+      Let it be the case that $f_{xx}(P)>0$ and $f_{yy}(P)<0$. Then $f_{xx}(P)f_{yy}(P)<0$ and
+      \[\mathcal D(f,P)=f_{xx}(P)f_{yy}(P)-f_{xy}(P)^2<0-f_{xy}(P)^2<0,\]
+      as the $f_{xy}(P)^2$ is always non-negative.
+    \end{solution}
+    \item Still in the $\mathcal D(f,P)>0$ case, in the 9 am section, I said we use $f_{yy}(P)$ to tell if we have a local maximum or local minimum. In the 10 am section, I said we use $f_{xx}(P)$ to tell if we have a local maximum or local minimum. Explain why both statements are true.
+    \begin{solution}
+      By what was said in the solution for part (a), if $f_{xx}(P)$ and $f_{yy}(P)$ differed in sign we would have $\mathcal D(f,P)<0$. Therefore, if $\mathcal D(f,P)>0$, then $f_{xx}(P)$ and $f_{yy}(P)$ must have the same sign.
+    \end{solution}
+  \end{enumerate}
+\end{problem}
+
+\begin{problem}
+  A 20-inch piece of wire is to be cut into three pieces. From one piece is made a square and from another is made a rectangle with length equal to twice its width. From the third is made an equilateral triangle. How should the wire be cut so that the sum of the three areas is a maximum?
+\end{problem}
+\begin{solution}
+  It turns out that all of the wire should be used for the square.
+
+  The first solution does not use Lagrange multipliers and is as follows. Let $x$ be the side length of the square and $y$ be the width of the rectangle. Then $(20-4x-6y)/3$ is the side length of the equilateral triangle. The total area enclosed by the three figures is
+  \[f(x,y)=x^2+2y^2+\frac{\sqrt3}{36}(20-4x-6y)^2.\]
+  We set $\nabla f=0$, which leads to $2x-2\sqrt3(20-4x-6y)/9=0$ and $4y-\sqrt3(20-4x-6y)/3=0$. There is one solution:
+  \[x=\frac{40(17-6\sqrt3)}{181}\approx 1.46,\quad y=\frac{510-180\sqrt3}{181}\approx 1.095.\]
+  At $P_0=\left(\frac{40(17-6\sqrt3)}{181},\frac{510-180\sqrt3}{181}\right)$, we have
+  \[\mathcal D(f,P_0)=8+\frac{68\sqrt3}{9}>0\]
+  and $f_{xx}(P_0)=2+\frac{8\sqrt3}{9}>0$. Therefore, $f$ has a local \text{minimum} at $P_0$. There is \emph{no} solution unless we allow zero side lengths (that is, to allow one or more of the three figures to degenerate to a point). In that case, by examining $f(x,y)$ on the boundary of the triangle $\{(x,y):0\leq x\leq 5,0\leq 4x+6y\leq 20\}$, we see that the entire length of the wire should be used to form a square, resulting in a maximum area of $f(5,0)=25$.
+\end{solution}
+\begin{solution}
+  The second solution with Lagrange multipliers:
+
+  Let $x,y,z$ be the three pieces of wire, in order. The constraint on $x,y,z$ is therefore that $x+y+z=20$. Let $g(x,y,z)=x+y+z$. The square's side length is $x/4$ and thus has area $x^2/16$. The rectangle's width $w$ has the property that $2(2w+w)=y$, or $6w=y$, so $w=y/6$. The rectangle's area is therefore $2w\cdot w=y^2/18$. The equilateral triangle's side length is $z/3$. Furthermore, using geometry one derives that an equilateral triangle of side length $s$ has area $\sqrt3/4\cdot s^2$. Hence the triangle's area is $\sqrt3/4\cdot z^2/9=\sqrt3/36\cdot z^2$. The total area is therefore $f(x,y,z)=\frac1{16}x^2+\frac1{18}y^2+\frac{\sqrt3}{36}z^2$.
+
+  We have $\nabla f(x,y,z)=(\frac18x, \frac19y,\frac{\sqrt3}{18}z)$ and $\nabla g(x,y,z)=(1,1,1)$. Thus we must solve
+  \begin{align*}
+    x+y+z &= 20\\
+    \left(\frac18x, \frac19y,\frac{\sqrt3}{18}z\right) &= \lambda(1,1,1).
+  \end{align*}
+  The second equation says that $x=8\lambda,y=9\lambda,z=\frac{18}{\sqrt3}\lambda$, and plugging this into the first equation we find that
+  \[\left(8+9+\frac{18}{\sqrt3}\right)\lambda=20,\text{ or }\lambda=\frac{20}{17+6\sqrt3}.\]
+  This gives $x=\frac{160}{17+6\sqrt3},y=\frac{180}{17+6\sqrt3},z=\frac{360}{18+17\sqrt3}$, and for these values of $x,y,z$ we have $f(x,y,z)=\frac{200}{181}(17-6\sqrt3)\approx 7.30132$. However, for example, using all 20 inches of wire for the square gives an area of 25. So it turns out that our value of $7.30132$ is actually a minimum! As in the previous solution, we find that the maximum occurs on the boundary.
+\end{solution}
+
+\begin{problem}
+  A Cobb-Douglas utility function has the form $f(x,y) = Cx^py^q$ where $C$, $p$, and $q$ are positive constants. If the first item costs $A$ per unit and the second costs $B$ per unit, and if the consumer has a total amount $T$ that he can spend on the two items, then for what values of $x$ and $y$ is the consumer's utility maximized? Express your answer in terms of $C,p,q,A,B$, and $T$.
+\end{problem}
+\begin{solution}
+  The consumer wants to maximize $f(x,y)=x^py^q$ subject to the constraint $Ax+By=T$. Using Lagrange multipliers he looks for $x$ and $y$ positive such that $\nabla f=\lambda\nabla g$ where $g(x,y)=Ax+By$. The scalar equations are
+  \[px^{p-1}y^q=\lambda A,\ qx^py^{q-1}=\lambda B,\text{ and }Ax+By=T.\]
+  Divide the first equation by the second to see that $Ax=pBy/q$. Substitute into the constraint equation and $(pB/q+B)y=T$ so
+  \[y=\frac T{pB/q+B}=\frac TB\frac q{p+q}\text{ and }x=\frac TA\frac p{p+q}.\]
+\end{solution}
+
+\begin{problem}
+  Evaluate the double integral $\iint_\mathcal R \ln(xy)\,dA,\quad R=\{(x,y):1\leq x\leq e,1\leq y\leq e\}$.
+\end{problem}
+\begin{solution}
+  \[\begin{split}
+    \int_1^e\left(\int_1^e\ln(xy)\,dx\right)dy &= \int_1^e \left((x\ln(x)-x+x\ln(y))\Big|_{x=1}^{e}\right)\,dy\\
+    &= \int_1^e((e-1)\ln(y)+1)\,dy\\
+    &=((e-1)(y\ln(y)-y)+y)\Big|_1^e\\
+    &= 2e-2.
+  \end{split}\]
+\end{solution}
+
+\begin{problem}
+  In this problem we will use Lagrange multipliers to derive the famous arithmetic-geometric mean (AM-GM) inequality: the arithmetic mean of a set of $n$ positive numbers is always greater than or equal to their geometric mean.
+  \begin{enumerate}[(a)]
+    \item For list the 5 numbers $1,5,2,34,2$, compare their arithmetic mean and geometric mean. (You should use a calculator.)
+    \begin{solution}
+      The arithmetic mean is $44/5\approx 8.8$ and the geometric mean is $\sqrt[5]{680}\approx 3.68555$. The arithmetic mean is greater.
+    \end{solution}
+    \item We start to prove the AM-GM inequality now. Suppose $x_1,x_2,\dots,x_n$ are positive numbers. Minimize $x_1+x_2+\cdots+x_n$ subject to the constraint $x_1x_2\cdots x_n=1$.
+    \begin{solution}
+      We have the constraint equation $g(x_1,\dots,x_n)=x_1x_2\cdots x_n$. It has $n$ variables, so its gradient will be a vector with $n$ comopnents. In this case, we have $\nabla g$ as the vector whose $i$th component is the product of all the $x_1\cdots x_n$ except $x_i$. That is, the $i$th component of $\nabla g$ is $\prod_{j\neq i}x_j$.
+
+      The objective function is $f(x_1,\dots,x_n)=x_1+\cdots+x_n$, and $\nabla f(x_1,\dots,x_n)=(1,1,\dots,1)$.
+
+      The Lagrange equations $f_{x_j}(P)=\lambda g_{x_j}(P)$ along with the constraint gives the system
+      \begin{align*}
+        x_1\cdots x_n &= 1\\
+        1 &= \lambda\prod_{j\neq i}x_j\text{ for }i=1,2,\dots,n.
+      \end{align*}
+      These can be rewritten as
+      \begin{align*}
+        x_1\cdots x_n &= 1\\
+        1 &= \lambda\frac{x_1\cdots x_n}{x_i}=\lambda\frac{1}{x_i}\text{ for }i=1,2,\dots,n.
+      \end{align*}
+      Thus $x_1=\lambda,x_2=\lambda,\dots,x_n=\lambda$. The constraint says $\lambda^n=1$, so $\lambda=1$ (or possibly $-1$ if $n$ is even, but the case $\lambda=-1$ is ruled out as this would make the $x_i$ negative, and the $x_i$ were assumed positive).
+
+      The value of $f$ at $(1,1,\dots,1)$ is $n$, and by analysis of the function we see that this is a minimum. (For example, we easily get as huge a value as we like for $f(x_1,\dots,x_n)$ if we set $x_1$ to be a huge number and $x_2=1/x_1$, with the other $x_i$ equaling 1).
+    \end{solution}
+    \item Now suppose the constraint is $x_1x_2\cdots x_n=K$, for some positive constant $K$ not necessarily equal to 1. Minimize $x_1+x_2+\cdots+x_n$. Use part (b) and some nice logical reasoning rather than doing the Lagrange multipliers method again.
+    \begin{solution}
+      Set $y_i=x_i/\sqrt[n]K$ for each $i$. Then the problem is equivalent to minimizing $\sqrt[n]K(y_1+\cdots+y_n)$ subject to $y_1\cdots y_n=1$. Minimizing $\sqrt[n]K(y_1+\cdots+y_n)$ is equivalent to minimizing $y_1+\cdots+y_n$, and this problem and constraint are now exactly the same as in (b). Using (b) we get $y_1=\cdots=y_n=1$, which translates to $x_1=\cdots=x_n=\sqrt[n]K$, and so the minimum possible value for $x_1+\cdots+x_n$ is $n\sqrt[n]K$.
+    \end{solution}
+    \item Use part (c) to prove that the arithmetic mean of any collection of $n$ numbers is greater than or equal to the geometric mean of that collection. This is the AM-GM inequality.
+    \begin{solution}
+      Let $x_1\cdots x_n$ be any positive numbers, and let $K$ be their product. By part (c), $x_1+\cdots+x_n$ must be at least $n\sqrt[n]K$. Dividing both sides by $n$, we get
+      \[\frac{x_1+\cdots+x_n}n\geq\sqrt[n]K=\sqrt[n]{x_1\cdots x_n},\]
+      which is exactly the AM-GM inequality.
+    \end{solution}
+  \end{enumerate}
+\end{problem}
+
+\begin{problem}
+  How difficult was each problem? Rate each problem (and part) on a difficulty scale from 1 to 7, where 1 means ``super easy, barely an inconvenience!'' and 7 means ``hardest problem I've ever done.''
+\end{problem}
+
+\newpage
+
+\section{Hints}
+
+\begin{hint}[Hint for 5]
+  The formula for the arithmetic mean of $x_1,\dots,x_n$ is
+  \[\frac{x_1+\cdots+x_n}n\]
+  and the formula for the geometric mean of $x_1,\dots,x_n$ is
+  \[\sqrt[n]{x_1x_2\cdots x_n}.\]
+\end{hint}
+
+\begin{hint}[Hint for 5(c)]
+  If $x_1,\dots,x_n$ multiply to $K$, can you multiply all of them by a constant (the same constant for each of them) to get them to multiply to 1?
+\end{hint}

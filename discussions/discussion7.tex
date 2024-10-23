@@ -1,0 +1,46 @@
+\documentclass[11pt,oneside]{amsart}
+\input{../preamble}
+
+\title{MATH2202 Spring 2024\\
+Discussion 7}
+\date{March 12, 2024}
+
+\theoremstyle{definition}
+\newtheorem{question}{Question}
+
+\begin{document}
+  \maketitle
+
+  The TA will demonstrate 1(a) and 1(b). You will need Mathematica for Problem 2.
+
+  \begin{problem}
+    The multivariable chain rule gives a way to prove a formula for implicit differentiation you may have seen before in AP calculus: Given the equation $F(x,y)=0$, then
+    \[\frac{dy}{dx}=-\frac{F_x(x,y)}{F_y(x,y)}\]
+    \begin{enumerate}[(a)]
+      \item Prove this formula using the multivariable chain rule.
+      \item Try it out yourself on the example $x^3y^2-6xy-1=0$. Compare with normal implicit differentiation.
+    \end{enumerate}
+  \end{problem}
+
+  \begin{problem}\leavevmode
+    \begin{enumerate}[(a)]
+      \item Recall from class that $(0,0)$, $(18,0)$, and $(0,18)$ were all saddle points while $(6,6)$ was a local maximum for the function
+      \[f(b,\ell)=b\ell(18-b-\ell).\]
+      Plot this function in Mathematica in 3D and check that those points have the nature as stated. Also observe how the shape of the plot looks while you're at it.
+      \item Also plot level curves in Mathematica to give another way to see how it looks. Use \texttt{ContourPlot}. Set the \texttt{Contours} option to a larger number such as 50. Can you see the local maximum as well as the 3 saddle points on this plot?
+      \item Try finding and classifying critical points for the slightly different function
+      \[f(b,\ell)=b\ell(18-2b-\ell).\]
+      Then check with Mathematica using \texttt{ContourPlot}.
+    \end{enumerate}
+  \end{problem}
+
+  \begin{problem}
+    Consider the ellipse $x^2+2y^2=1$. With the help of the gradient vector, find a normal vector to the curve at $P=\left( \frac1{\sqrt2},\frac12 \right)$.
+  \end{problem}
+
+  \begin{problem}
+    What does the Hessian test (another term for second derivative test) say about the function $f(x,y)=x^3+y^3$ at $(0,0)$? Show that in every direction through $(0,0)$ the second derivative is 0, meaning we have an inflection point in every direction.
+
+    Another good example is $x^3+y^2-2y$ at $(0,1)$. Make a contour plot for this in Mathematica! In which directions do we have a local min/max/inflection point?
+  \end{problem}
+\end{document}

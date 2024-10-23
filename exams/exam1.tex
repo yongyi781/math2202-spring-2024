@@ -1,0 +1,157 @@
+\documentclass[11pt,oneside]{amsart}
+\usepackage[margin=1in]{geometry}
+\usepackage{amssymb,parskip,mathtools,microtype}
+\usepackage[shortlabels]{enumitem}
+
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+\newtheorem{question}{Question}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+
+\newcommand{\bC}{\mathbb{C}}
+\newcommand{\bQ}{\mathbb{Q}}
+\newcommand{\bR}{\mathbb{R}}
+\newcommand{\bZ}{\mathbb{Z}}
+\newcommand{\bE}{\mathbb{E}}
+\newcommand{\BP}{{\mathbf{P}}}
+\newcommand{\ba}{{\mathbf{a}}}
+\newcommand{\bi}{{\mathbf{i}}}
+\newcommand{\bj}{{\mathbf{j}}}
+\newcommand{\bk}{{\mathbf{k}}}
+\newcommand{\bn}{{\mathbf{n}}}
+\newcommand{\br}{{\mathbf{r}}}
+\newcommand{\bs}{{\mathbf{s}}}
+\newcommand{\bu}{{\mathbf{u}}}
+\newcommand{\bv}{{\mathbf{v}}}
+\newcommand{\bw}{{\mathbf{w}}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\blank}{\underline{\hspace{1cm}}}
+\newcommand{\longblank}{\underline{\hspace{2cm}}}
+
+\DeclareMathOperator{\Var}{Var}
+\let\Re\relax
+\DeclareMathOperator{\Re}{Re}
+\let\Im\relax
+\DeclareMathOperator{\Im}{Im}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\dir}{\mathbf{dir}}
+
+\title{MATH2202 Spring 2024\\
+Exam 1}
+\author{Wednesday, February 21, 2024}
+
+\begin{document}
+\maketitle
+
+Name: \underline{\hspace{6cm}}
+
+This exam is open book. Calculators are not allowed. There are 50 points total in this exam. If you do not manage to solve a problem, show a strategy you tried and a reflection on why it did not work, for partial credit.
+
+\vskip 2cm
+
+Please answer the following questions.
+
+\begin{question}
+  I did the practice problems on the homework. (Circle one.)
+
+  \hspace{1.5cm}Yes, all of them\hspace{1.5cm} Some of them\hspace{1.5cm} No
+\end{question}
+
+\begin{question}
+  I did the midterm additional practice problems. (Circle one.)
+
+  \hspace{1.5cm}Yes, all of them\hspace{1.5cm} Some of them\hspace{1.5cm} No\hspace{1.5cm}What's that?
+\end{question}
+
+\begin{question}
+  I understood the homework solutions. (Circle one.)
+
+  \hspace{1.5cm}Yes, all of them\hspace{1.5cm} Some of them\hspace{1.5cm} No
+\end{question}
+
+\begin{question}
+  I can understand the textbook. (Circle one.)
+
+  \hspace{1.5cm}Yes\hspace{1.5cm} Only the examples\hspace{1.5cm} No, but I tried\hspace{1.5cm}Didn't read
+\end{question}
+
+\begin{question}
+  I come to class. (Circle one.)
+
+  \hspace{1.5cm}Yes and I mainly listen\hspace{1.5cm}Yes and I take notes\hspace{1.5cm} No
+\end{question}
+
+\begin{question}
+  I come to discussions. (Circle one.)
+
+  \hspace{1.5cm}Yes\hspace{1.5cm} No
+\end{question}
+
+\begin{question}
+  I studied using: (Circle all that apply.)
+
+  \hspace{1.5cm}Homework solutions\hspace{0.05\textwidth} Practice problems\hspace{0.05\textwidth} Materials from previous years
+
+  \hspace{1.5cm}Other (please specify): \underline{\hspace{8cm}}
+\end{question}
+
+\newpage
+
+\begin{problem}
+  Questions about multivariable functions.
+  \begin{enumerate}[(a)]
+    \item (3 points) Compute the limit
+    \[\lim_{(x,y)\to (0,0)}((1-xy)^2+\sin(x+y)).\]
+    \vfill
+    \item (4 points) Sketch, on the same plot, the level sets $L_5$ and $L_6$ for $f(x,y)=x^2+y+1$.
+    \vfill
+    \vfill
+    \item (3 points) Sketch the domain of $f(x,y)=\sqrt{y+1}$.
+    \vfill
+  \end{enumerate}
+\end{problem}
+
+\newpage
+
+\begin{problem}
+  Questions about vectors.
+  \begin{enumerate}[(a)]
+    \item (3 points) Do the vectors $(-1,5,2)$ and $(-1,-2,4)$ have an acute, obtuse, or right angle between them? Prove it.
+    \vfill
+    \item (4 points) Find the area of the triangle in space with vertices $(1,0,0)$, $(0,2,0)$, and $(0,0,3)$.
+    \vfill
+    \item (3 points) Find the equation of a plane which is parallel to the plane $3x+4y-5z=9$ and passes through the the point $(1,-2,1)$.
+    \vfill
+  \end{enumerate}
+\end{problem}
+
+\newpage
+
+\begin{problem}[10 points]
+  Find parametric equations for the tangent line to $\br(t)=(t,t^2,2t+3)$ at $(2,4,7)$. Write your answer in \textbf{both} the vector-valued function $\br(t)$ format and the $x=\_,y=\_,z=\_$ format.
+\end{problem}
+
+\newpage
+
+\begin{problem}[10 points]
+  Let $\bv=(x,y,z)$. Prove that the projection of $\bv$ onto $(1,1,1)$ is the vector $(w,w,w)$ where $w$ is the average of $x$, $y$, and $z$.
+\end{problem}
+
+\newpage
+
+\begin{problem}\leavevmode
+  \begin{enumerate}[(a)]
+    \item (5 points) The vector-valued function $\br(t)=(\cos(t),\sin(t))$ describes a particle traveling on the unit circle with a constant speed.
+
+    Give an example of another vector-valued function $\bs(t)$ which describes a particle traveling on the unit circle, but with a non-constant speed. Show that (i) your example stays on the unit circle and (ii) the speed is not constant.
+    \vfill
+    \item (5 points) Prove that for \textbf{every} possible vector-valued function $\bs(t)$ that describes a particle traveling on the unit circle, the vectors $\bs(t)$ and $\bs'(t)$ are perpendicular at every time $t$.
+    \vfill
+    \vfill
+  \end{enumerate}
+\end{problem}
+
+\end{document}

@@ -1,0 +1,109 @@
+\documentclass[11pt,oneside]{amsart}
+\usepackage{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{booktabs,pdfpages}
+
+\newcommand{\eps}{\varepsilon}
+\newcommand{\bE}{\mathbb{E}}
+\DeclareMathOperator{\Var}{Var}
+
+\pagestyle{empty}
+
+\title{Instructor's Report, Spring 2024}
+
+\begin{document}
+\maketitle
+
+\bigskip
+
+\textbf{Course number, name:} MATH2202, Multivariable Calculus
+
+\textbf{Instructor:} Yongyi Chen
+
+\textbf{TA:} Tingting Fang
+
+\section{Report}
+\subsection{Texts}
+\begin{itemize}
+  \item Text: Blank and Krantz, Multivariable Calculus, 2nd edition. Chapters 9 to 13.
+\end{itemize}
+
+\subsection{Topics}
+Pretty much standard topics, chapters 9 to 13.
+\begin{itemize}
+  \item Vectors: basic operations, dot product, cross product, lines, planes.
+  \item Vector-valued functions, speed, velocity, reparametrization.
+  \item Multivariable functions, partial derivatives, chain rule, min-max problems, Lagrange multipliers
+  \item Multiple integrals -- switching bounds of integration, polar coordinates and integration, spherical coordinates and integration
+  \item Vector calculus -- vector fields, integral curves, gradients, divergence, curl, Green's theorem, Stokes' theorem
+\end{itemize}
+Among these, the hardest topics were lines/planes, reparametrization, Lagrange multipliers, polar integration, and switching bounds of integration.
+
+\subsection{Some comments about the text}
+I can say that this textbook looks and acts like a standard calculus textbook. It was well organized but I could tell that students would need a lot of guidance to learn how to learn math from it. The major concern I have, not necessarily about this specific textbook, but about generally all standard calculus textbooks (e.g.\ Stewart), is that there is a very large mismatch between the writing style of the textbook and its intended audience, i.e.\ college freshmen.
+
+There's a reason that every year, most students are only able to make use of the worked out examples in their calculus textbook and not much else. In places other than worked examples, the writing assumes a certain baseline level of mathematical language and problem-solving ability. This assumed baseline level is in reality only met by, maybe, 5--10\% of the students taking multivariable calculus in any given year. It would be very nice for future editions of a calculus textbook to work on bridging this gap. For example, I would love to see proofs written that are meant to be read by the students.
+
+\subsection{Comments about topics}
+The topics are fine, but maybe there are too many of them (more on that below).
+
+The one topic that felt awkward was limits, for the following reason. The content of the multivariable limits section is, from the students' point of view, one problem type: problems that test whether you know how to perform the two-paths test to prove a limit does not exist. Yet, for the rest of the course we assume our functions are at least twice continuously differentiable (for good reason -- I do not think teaching nitty-gritty details of real analysis is appropriate here.) This means that the purpose of the limits section is simply to test on knowledge of that one problem type, which from the students' point of view reinforces the notion that math is about knowing how to solve ``problem types,'' rather than about thinking.
+
+On the subject of whether there are too many topics, I think there are, because we need to allocate time in the class to teach problem solving and mathematical thinking. Ordinarily these foundational skills are taught at some point in the 12 years of K--12 math education. But the past 20+ years have clearly shown otherwise. So we need some time to teach it, and I have allocated some time this semester to do so, but not nearly enough.
+
+\subsection{Other learning goals}
+Problem solving was an important theme throughout the course. Every homework assignment required it, and I was able to squeeze in three problem solving sessions during the semester (I wish I had time for more!)
+
+For homework assignments I gave 2 bonus points to anyone who submitted their homework in \LaTeX. I thought this was a nice addition and many people took advantage of it, thus inadvertently learning \LaTeX\ in the process!
+
+\subsection{Enrollment and grading distribution}
+\begin{itemize}
+  \item 9 am section: About 14, ending with 12.
+  \item 10 am section: About 30, ending with 27.
+\end{itemize}
+The grade distribution was 13 A, 6 A$-$, 15 B, 4 C, and 1 D. More A's and A-'s than usual for a course like this, but I really think the students earned it. They learned a lot (i.e.\ how to think about math) throughout this course.
+
+\subsection{Assessment}
+20\% of the grade was determined by written homework, 80\% for exams. There were 2 midterms and 1 final.
+
+The written homework consisted of two parts. The first part was ungraded and consisted of routine practice problems from the textbook. The second part, to be turned in, consisted of 4-6 more challenging problems.
+
+All exams were open book, meaning students had access to the textbook throughout. I think open book was a great idea for two reasons. First, it nullifies variance caused by differences in notes or cheat sheets. Second, it gives them an excuse to learn how to understand their textbook, a very important life skill.
+
+Of course, open book exams require one to write more in-depth problems (at least for some of it), but I had no trouble designing problems to fit that bill.
+
+\subsection{Prerequisites}
+I was pleasantly surprised that there were few issues in algebra or calculus. I did catch a few of those famous ``fake $u$-substitutions'' as theorems of the form $\forall a,b,\sqrt{a+b}=\sqrt a+\sqrt b$, but they were rare. Of course problem solving was weak at the start, but I was prepared for that they grew a lot in that aspect over the course of this course.
+
+\subsection{General comments about this course}
+This course was overall a success. Some additional comments:
+\subsubsection{Technology}
+In the later half of this course, I did many demonstrations in Mathematica, typing code on an empty notebook. The students loved it. There was a lot of engagement and questions about the code I was typing and how it affected the output. I highly recommend future teachers to include similar demonstrations.
+
+I mentioned earlier how I think the content needs to be reduced in order to make room for problem solving. This is going to be hard and will require a lot of thinking. The ``reward'' of the class is definitely Stokes' theorem, especially seeing the similarities between Green's theorem, Stokes' theorem, and the divergence theorem and how they fit into the big picture of vector calculus (suggesting a unified framework for it all, such as differential forms). Unfortunately all the preceding material is required to be covered to reach that reward.
+
+\subsubsection{Discussion section}
+I chose not to have quizzes during discussion section, thus making discussion optional to attend. Moreover, the location of discussion section was quite out of the way. As a result, the discussion sections had quite low attendance this semester, further reducing their effectiveness for those who did attend. I did not find any good solutions to this without forcing attendance, something I don't like to do.
+
+\vspace{0pt plus 1fill}
+\noindent
+\textbf{Attached are the syllabus, all tests (including final), list of
+  HW assignments, and any other pertinent material.}
+\newpage
+
+\includepdf[pages=-]{syllabus.pdf}
+\includepdf[pages=-]{exams/exam1.pdf}
+\includepdf[pages=-]{exams/exam2.pdf}
+\includepdf[pages=-]{exams/final.pdf}
+
+% Attach psets 1 through 10.5.
+\newcounter{int}
+\setcounter{int}{1}
+\loop
+\includepdf[pages=-]{psets/pset\theint.pdf}
+\addtocounter{int}{1}
+\ifnum \value{int}<12
+\repeat
+
+\end{document}

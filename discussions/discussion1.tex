@@ -1,0 +1,57 @@
+\documentclass[11pt,oneside]{amsart}
+\input{../preamble}
+
+\title{MATH2202 Spring 2024\\
+Discussion 1}
+\date{January 23, 2024}
+
+\theoremstyle{definition}
+\newtheorem{question}{Question}
+
+\begin{document}
+  \maketitle
+
+  \begin{problem}
+    Prove the commutativity/associatity/distributivity laws of vector addition and scalar multiplication that I mentioned in class. Here, $\bu,\bv,\bw$ are vectors in $n$-dimensional space and $\lambda,\mu$ are scalars. If you want, you can assume $n=2$. (Ask your TA what the previous sentence means if you didn't understand it.)
+
+    Your TA will demonstrate the first three proofs. Do the last two with your group.
+    \begin{enumerate}[(a)]
+      \item $\bv+\bw=\bw+\bv$.
+      \item $\bu+(\bv+\bw)=(\bu+\bv)+\bw$.
+      \item $\lambda(\mu\bv)=(\lambda\mu)\bv$.
+      \item $\lambda(\bv+\bw)=(\lambda\bv+\lambda\bw)$.
+      \item $(\lambda+\mu)\bv=\lambda\bv+\mu\bv$.
+    \end{enumerate}
+  \end{problem}
+
+  \begin{problem}
+    Recall that $\dir(\bv)$ is the vector in the same direction of $\bv$ with length 1.
+
+    Also, we introduce the \emph{standard unit vectors}: $\mathbf i=(1,0,0)$, $\mathbf j=(0,1,0)$, and $\mathbf k=(0,0,1)$. So for example, $(1,3,5)=\mathbf i+3\mathbf j+5\mathbf k$.
+    \begin{enumerate}[(a)]
+      \item What is $\dir(\mathbf i+3\mathbf j+5\mathbf k)$? (i.e.\ write its coordinates).
+      \item There are exactly two vectors parallel to $\mathbf i+3\mathbf j+5\mathbf k$ and which have length 100. Find both of them.
+      \item There are infinitely many vectors perpendicular to $\mathbf i+3\mathbf j+5\mathbf k$. Find one of them (it must be nonzero). Prove to the others in your group that what you found is indeed perpendicular to $\mathbf i+3\mathbf j+5\mathbf k$.
+    \end{enumerate}
+  \end{problem}
+
+  \begin{problem}\leavevmode
+    \begin{enumerate}[(a)]
+      \item The sphere in $\bR^3$ (ask your TA what that notation means, if you don't know!), with center $(a,b,c)$ and radius $r$, consists of all the vectors $\bv$ such that $\|\bv-(a,b,c)\|=r$.
+
+      Derive the equation of this sphere:
+      \[(x-a)^2+(y-b)^2+(z-c)^2=r^2,\]
+      using the length formula or the Pythagorean theorem.
+      \item To have a concrete example, set $(a,b,c)=(1,2,3)$ and $r=10$. It turns out there are exactly two numbers $z$ such that $(0,0,z)$ lies on the aforementioned sphere. What are they?
+    \end{enumerate}
+  \end{problem}
+
+  \subsection*{Challenge problems}
+  \begin{enumerate}[(a)]
+    \item Does the following equation
+    \[x^2+y^2+z^2+3x+4y+5z=0\]
+    describe a sphere? If so, where is the center? (Hint: complete the square.)
+    \item Extension of 2(c): Find all vectors perpendicular to $\mathbf i+3\mathbf j+5\mathbf k$. (Hint: for any given $x$ and $y$ there will be a unique $z$ such that $(x,y,z)\perp \mathbf i+3\mathbf j+5\mathbf k$.)
+  \end{enumerate}
+
+\end{document}

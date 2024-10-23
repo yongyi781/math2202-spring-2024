@@ -1,0 +1,251 @@
+\documentclass[11pt,oneside]{amsart}
+\usepackage[margin=1in]{geometry}
+\usepackage{amssymb,parskip,mathtools,microtype,pgfplots}
+\usepackage[shortlabels]{enumitem}
+\usepgfplotslibrary{fillbetween}
+
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+\newtheorem{question}{Question}
+\newtheorem*{remark}{Remark}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+
+\newcommand{\bC}{\mathbb{C}}
+\newcommand{\bQ}{\mathbb{Q}}
+\newcommand{\bR}{\mathbb{R}}
+\newcommand{\bZ}{\mathbb{Z}}
+\newcommand{\bE}{\mathbb{E}}
+\newcommand{\BP}{{\mathbf{P}}}
+\newcommand{\ba}{{\mathbf{a}}}
+\newcommand{\bi}{{\mathbf{i}}}
+\newcommand{\bj}{{\mathbf{j}}}
+\newcommand{\bk}{{\mathbf{k}}}
+\newcommand{\bn}{{\mathbf{n}}}
+\newcommand{\br}{{\mathbf{r}}}
+\newcommand{\bs}{{\mathbf{s}}}
+\newcommand{\bu}{{\mathbf{u}}}
+\newcommand{\bv}{{\mathbf{v}}}
+\newcommand{\bw}{{\mathbf{w}}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\blank}{\underline{\hspace{1cm}}}
+\newcommand{\longblank}{\underline{\hspace{2cm}}}
+
+\DeclareMathOperator{\Var}{Var}
+\let\Re\relax
+\DeclareMathOperator{\Re}{Re}
+\let\Im\relax
+\DeclareMathOperator{\Im}{Im}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\dir}{\mathbf{dir}}
+
+\title{MATH2202 Spring 2024\\
+Exam 2}
+\author{Wednesday, April 10, 2024}
+
+\begin{document}
+\maketitle
+
+Name: \underline{\hspace{6cm}}
+
+This exam is open book. Calculators are not allowed. There are 50 points total in this exam. If you do not manage to solve a problem, show a strategy you tried and a reflection on why it did not work, for partial credit.
+
+\vskip 2cm
+
+Please answer the following questions. {\color{blue} The boxed answers had the best averages.}
+
+\begin{question}
+  I did the practice problems on the homework. (Circle one.)
+
+  \hspace{1.5cm}\boxed{\text{Yes, all of them}}\hspace{1.5cm} Some of them\hspace{1.5cm} No
+\end{question}
+
+\begin{question}
+  I did the midterm additional practice problems. (Circle one.)
+
+  \hspace{1.5cm}\boxed{\text{Yes, all of them}}\hspace{1.5cm} \boxed{\text{Some of them}}\hspace{1.5cm} No\hspace{1.5cm}\boxed{\text{What's that?}}
+\end{question}
+
+\begin{question}
+  I understood the homework solutions. (Circle one.)
+
+  \hspace{1.5cm}\boxed{\text{Yes, all of them}}\hspace{1.5cm} Some of them\hspace{1.5cm} No
+\end{question}
+
+\begin{question}
+  I can understand the textbook. (Circle one.)
+
+  \hspace{1.5cm}\boxed{\text{Yes}}\hspace{1.5cm} \boxed{\text{Only the examples}}\hspace{1.5cm} No, but I tried\hspace{1.5cm}Didn't read
+\end{question}
+
+\begin{question}
+  I come to class. (Circle one.)
+
+  \hspace{1.5cm}\boxed{\text{Yes and I mainly listen}}\hspace{1.5cm}\boxed{\text{Yes and I take notes}}\hspace{1.5cm} No
+\end{question}
+
+\begin{question}
+  I come to discussions. (Circle one.)
+
+  \hspace{1.5cm}\boxed{\text{Yes}}\hspace{1.5cm} No
+\end{question}
+
+\begin{question}
+  I studied using: (Circle all that apply.)
+
+  \hspace{1.5cm}\boxed{\text{Homework solutions}}\hspace{0.05\textwidth} \boxed{\text{Practice problems}}\hspace{0.05\textwidth} Materials from previous years
+
+  \hspace{1.5cm}Other (please specify): \underline{\hspace{8cm}}
+\end{question}
+
+\newpage
+
+\begin{problem}\leavevmode
+  \begin{enumerate}[(a)]
+    \item (5 points) The point $(\rho,\theta,\phi)=(3,\pi/2,\pi/2)$ is given in spherical coordinates. What is it in rectangular coordinates?
+    \begin{remark}\color{blue}
+      The answer is $(0,3,0)$. On the exam, I mistakenly had $r$ instead of $\rho$. However, the final answer would be the same anyway.
+    \end{remark}
+    \vfill
+    \item (5 points) Swap the order of integration of the following double integral, but do not evaluate.
+    \[\int_1^4\int_{y}^{y^2}\frac 1y\,dx\,dy.\]
+    Your answer should be of the form
+    \[\int_{\boxed{?}}^{\boxed{?}}\int_{\boxed{?}}^{\boxed{?}}\boxed{?}\,dy\,dx+\int_{\boxed{?}}^{\boxed{?}}\int_{\boxed{?}}^{\boxed{?}}\boxed{?}\,dy\,dx.\]
+    Drawing a picture is highly recommended.
+    \begin{remark}\color{blue}
+      Here is a plot of the region of integration.
+      \begin{center}
+        \begin{tikzpicture}
+          \begin{axis}[axis lines=middle, axis equal, xmin=0, xmax=16, ymin=0, ymax=4, xlabel=$x$, ylabel=$y$]
+            \addplot[name path=A, domain=1:4, samples=50] (x,x);
+            \addplot[name path=B, domain=1:16] (x,{sqrt(x)});
+            \addplot[domain=4:16] (x,4);
+            \addplot[blue!50, opacity=0.5] fill between[of=A and B];
+    %         \fill[gray,opacity=0.2] plot[domain=0:1] (-2*\x-1,\x) -- plot[domain=-1:3]
+    % (-\x*\x+2,\x);
+          \end{axis}
+        \end{tikzpicture}
+      \end{center}
+      This was difficult for many people. Not many people visualized/drew the region correctly. The answer is
+      \[\int_1^4\int_{\sqrt x}^x\frac 1y\,dy\,dx+\int_4^{16}\int_{\sqrt x}^4\frac 1y\,dy\,dx.\]
+      This problem is similar to Problem Set 7, Practice 4 and Problem 4.
+
+      On copy of the exam that I administered, I accidentally omitted an integral from each of the terms in the desired form, but put a correction on the board. Nevertheless, the main source of difficulty of this problem was drawing/visualizing the region of integration accurately.
+    \end{remark}
+    \vfill
+    \vfill
+    \vfill
+  \end{enumerate}
+\end{problem}
+
+\newpage
+
+\begin{problem}\leavevmode
+  \begin{enumerate}[(a)]
+    \item (5 points) Compute the triple integral
+    \[\iiint_{\mathcal U}dV\]
+    where $\mathcal U=\{(x,y,z)\mid 0\leq y\leq 2,2\leq z\leq 4, y\leq x\leq z\}$.
+    \begin{remark}\color{blue}
+      The triple integral is
+      \[\int_0^2\int_2^4\int_y^z dx\,dz\,dy.\]
+      The answer is 8.
+    \end{remark}
+    \vfill
+    \item (5 points) Write down (but do not solve) the Lagrange equations that would solve this problem: Find the point $(x,y,z)$ on the sphere of radius 6 centered at the origin closest to $(1,2,3)$.
+    \begin{remark}\color{blue}
+      We can use the objective function $f(x,y,z)=(x-1)^2+(y-2)^2+(z-3)^2$ and constraint $x^2+y^2=z^2=36$. Then the Lagrange equations are
+      \begin{align*}
+        x^2+y^2+z^2 &= 36\\
+        2(x-1)&=\lambda\cdot 2x\\
+        2(y-2)&=\lambda\cdot 2y\\
+        2(z-3)&=\lambda\cdot 2z.
+      \end{align*}
+      There is also a more complicated variant if you used the objective function \\$\sqrt{(x-1)^2+(y-2)^2+(z-3)^2}$.
+    \end{remark}
+    \vfill
+  \end{enumerate}
+\end{problem}
+
+\newpage
+
+\begin{problem}
+  Let $f(x,y)=xe^y+3x$.
+  \begin{enumerate}[(a)]
+    \item (3 points) Calculate $\nabla f(5,0)$.
+    \begin{remark}\color{blue}
+      The answer is $(4,5)$.
+    \end{remark}
+    \vfill
+    \item (7 points) You're given that $\nabla f(3,0)=(4,3)$. Show that there is no unit vector $\bu$ such that $D_\bu f(3,0)=-6$.
+    \begin{remark}\color{blue}
+      The simplest solution is to notice that by the Cauchy-Schwarz inequality, $|\nabla f(3,0)\cdot \bu|\leq \|(4,3)\|\cdot1=5$, in other words, $-5\leq\nabla f(3,0)\cdot \bu\leq 5$. So $-6$ is not attainable as a directional derivative of $f$ at $(3,0)$, since $-6$ is outside the range $[-5,5]$.
+
+      This is basically a copy of Problem Set 5, Problem 5. (Check out the solution for that problem. The above solution is the first solution.)
+
+      Many people had more complicated solutions involving quadratics and discriminants, which would also work. (Corresponding to the third solution in Problem Set 5, Problem 5.)
+    \end{remark}
+    \vfill
+    \vfill
+    \vfill
+  \end{enumerate}
+\end{problem}
+
+\newpage
+
+\begin{problem}[10 points]
+  The Archimiedean spiral $r=\theta$ is drawn below. Write down, but do not evaluate, an integral in polar coordinates that represents the shaded area. (Hint: Despite appearances, the arcs are not circular arcs.)
+  \begin{center}
+    \begin{tikzpicture}[scale=0.3]
+      \draw[->] (0,-6*pi) -- (0,6*pi) node[above] {$y$};
+      \draw[->] (-6*pi,0) -- (6*pi,0) node[right] {$x$};
+
+      \draw[domain=0:6*pi,smooth,variable=\t,samples=100] plot ({\t*cos(deg(\t))},{\t*sin(deg(\t))});
+      \fill[gray] (2*pi,0) -- plot[domain=4*pi:4.5*pi, variable=\t] ({\t*cos(deg(\t))},{\t*sin(deg(\t))}) -- (0,4*pi) -- plot[domain=2.5*pi:2*pi, variable=\t] ({\t*cos(deg(\t))},{\t*sin(deg(\t))}) -- cycle;
+    \end{tikzpicture}
+  \end{center}
+\end{problem}
+\begin{remark}\color{blue}
+  Some possibilities (any of these would work):
+  \[\int_0^{\frac{\pi}{2}}\int_{\theta+2\pi}^{\theta+4\pi}r\,dr\,d\theta.\]
+  \[\int_{2\pi}^{\frac{5\pi}{2}}\int_{\theta}^{\theta+2\pi}r\,dr\,d\theta.\]
+  \[\int_{4\pi}^{\frac{9\pi}2}\int_0^\theta r\,dr\,d\theta-\int_{2\pi}^{\frac{5\pi}2}\int_0^\theta r\,dr\,d\theta.\]
+  \[\int_0^{\frac{\pi}2}\left(\frac12(\theta+4\pi)^2-\frac12(\theta+2\pi)^2\right)\,d\theta.\]
+  I think this was the hardest problem on the exam. This had some of the same themes as one of the polar integration questions I put on the board in class just before spring break. It is also similar to Problem Set 7, Problem 3.
+
+  In order to solve this problem, you needed to:
+  \begin{itemize}
+    \item Understand the graph of $r=\theta$ well enough to realize that the Archimedean spiral goes around the circle more than once.
+    \item Identify the corner points of the shaded region as having distances $2\pi,4\pi,5\pi/2,9\pi/2$ from the origin.
+    \item Identify the inner boundary curve as belonging to the $\theta\in [2\pi,5\pi/2]$ portion of the graph, and identify the outer boundary curve as belonging to the $\theta\in [4\pi,9\pi/2]$ portion of the graph.
+    \item Be able to translate this knowledge using some thinking to an expression in terms of polar integration. (See the four integrals above.)
+    \item Remember the $r$ factor as the Jacobian for polar integraion.
+  \end{itemize}
+  So this was definitely a multi-layered problem.
+
+  Fun fact, the actual area (i.e.\ the result of any the integrals above) is $\dfrac{13\pi^3}4$.
+\end{remark}
+
+\newpage
+
+\begin{problem}[10 points]
+  Recall that a (twice-differentiable) function $f(x,y)$ is \emph{harmonic} if it satisfies
+  \[\frac{\partial^2 f}{\partial x^2}(x,y)+\frac{\partial^2 f}{\partial y^2}(x,y)=0\text{ for all }x,y.\]
+  Suppose $f(x,y)$ is a harmonic function and that for every critical point $(x_0,y_0)$ of $f$, the discriminant $\mathcal D(f,(x_0,y_0))$ is nonzero. Prove that $f$ has no local minima or maxima.\footnote{The claim is still true without the discriminant condition but would be harder to prove.}
+
+  Hint: Start with the following sentence: ``Suppose that $P=(x_0,y_0)$ is a critical point of $f$.'' You may use the space below for scratch work and/or thinking.
+\end{problem}
+\begin{remark}\color{blue}
+  People did well on this problem. Some key observations in order:
+  \begin{itemize}
+    \item The fact $f$ is harmonic means $f_{xx}(x,y)+f_{yy}(x,y)=0$ at each point $(x,y)$, in other words, $f_{xx}(x,y)=-f_{yy}(x,y)$.
+    \item The product of two numbers with opposite signs is always negative or 0, because $x\cdot(-x)=-x^2\leq 0$.
+    \item Hence $f_{xx}(x,y)f_{yy}(x,y)\leq 0$ for all $x,y$.
+    \item Also, $f_{xy}(x,y)^2\geq 0$ for all $x,y$ because the left hand side is a square of a real number.
+    \item Hence $\mathcal D(f,(x_0,y_0))\leq 0$ for all $(x_0,y_0)$.
+    \item The hypotheses of the problem imply that the inequality is strict, so $(x_0,y_0)$ is a saddle point for all critical points $(x_0,y_0)$.
+  \end{itemize}
+\end{remark}
+
+\end{document}

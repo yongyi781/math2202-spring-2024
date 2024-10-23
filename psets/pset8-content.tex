@@ -1,0 +1,182 @@
+\maketitle
+
+Due: \textbf{Monday, April 8} at 11:59 pm. No extensions. Solutions will be posted immediately after the due date.
+
+\section{Practice problems -- don't submit these}
+\subsection{12.6. Triple integrals}
+\begin{practice}p.1019 \#3\end{practice}
+\begin{pracsol}
+  \[\begin{split}
+    \int_1^4\int_{-z}^z\int_{y-z}^{y+z}(x+3)\,dx\,dy\,dz &= \int_1^4\int_{-z}^z \left(\frac{x^2}{2}+3x\right)\Big|_{x=y-z}^{y+z}\,dx\,dy\\
+    &= \int_1^4\int_{-z}^z\left(\frac{(y+z)^2}{2}-\frac{(y-z)^2}{2}+6z\right)\,dy\,dz\\
+    &= \int_1^4 \left(\frac{(y+z)^3}{3}-\frac{(y-z)^3}{3}+6yz\right)\Big|_{y=-z}^{y=z}\,dz\\
+    &= \int_1^4 12z^2\,dz\\
+    &= 252.
+  \end{split}\]
+\end{pracsol}
+\begin{practice}p.1019 \#6\end{practice}
+\begin{pracsol}
+  \[\begin{split}
+    \int_0^3\int_y^{2y}\int_z^{z+y}8xyz\,dx\,dz\,dy &= \int_0^3\int_y^{2y}(8y^2z^2+4y^3z)\,dz\,dy\\
+    &= \frac{74}{3}\int_0^3 y^5\,dy\\
+    &= 2997.
+  \end{split}\]
+\end{pracsol}
+\begin{practice}p.1019 \#18\end{practice}
+\begin{pracsol}
+  The projection of the solid in the $xz$-plane is the disk $\mathcal R$ described in polar coordinates by $0\leq r\leq 2$. The volume is
+  \[\iint_{\mathcal R}\int_{x^2+z^2-3}^{5-x^2-z^2}\,dy\,dA = \int_0^{2\pi}\int_0^2\int_{r^2-3}^{5-r^2}dy\,r\,dr\,d\theta=16\pi.\]
+\end{pracsol}
+\subsection{12.8. Other coordinate systems}
+\begin{practice}p.1036 \#4\end{practice}
+\begin{pracsol}
+  Cylindrical coordinates: $(r,\theta,z)=\left(2,\frac{7\pi}4,2\right)$
+\end{pracsol}
+\begin{practice}p.1036 \#5\end{practice}
+\begin{pracsol}
+  The distance from the origin to the projection of $P$ to the $xy$-plane is 3, so $r=3$. The angle in the $xy$-plane is $\theta=3\pi/2$. Therefore, the cylindrical coordinates are $(3,3\pi/2,-2)$.
+\end{pracsol}
+\begin{practice}p.1036 \#17\end{practice}
+\begin{pracsol}
+  Since $\rho=3$ and $\phi=\frac\pi3$, $r=3\sin(\frac\pi3)=\frac{3\sqrt3}2$ and $z=3\cos(\frac\pi3)=\frac32$. Therefore, the cylindrical coordinates of $P$ are $\left(\frac{3\sqrt3}{2},\frac{2\pi}{3},\frac32\right)$.
+\end{pracsol}
+\begin{practice}p.1036 \#22\end{practice}
+\begin{pracsol}
+  Rectangular coordinates: $(3\sqrt2,3\sqrt2,-6)$; spherical coordinates: $(6\sqrt2,\frac\pi4,\frac{3\pi}4)$.
+\end{pracsol}
+\begin{practice}p.1036 \#31\end{practice}
+\begin{pracsol}
+  The description of the solid in spherical coordinates is
+  \[\mathcal U=\{(\rho,\theta,\phi):0\leq\rho\leq3, 0\leq\theta\leq2\pi,0\leq\phi\leq\pi\}.\]
+  Therefore the integral evaluates as follows.
+  \[\begin{split}
+    \int_0^3\int_0^\pi\int_0^{2\pi}5\rho^2\sin(\phi)d\theta\,d\phi\,d\rho &= 10\pi\int_0^3\int_0^\pi\rho^2\sin(\phi)\,d\phi\,d\rho\\
+    &= 20\pi\int_0^3 \rho^2\,d\rho\\
+    &= 180\pi.
+  \end{split}\]
+  (You could have integrated in any of the 6 possible orders, since all bounds are constants.)
+\end{pracsol}
+
+\newpage
+
+\section{Practice exam -- submit these}
+
+Try to finish this in 50 minutes, but you make take longer if necessary.
+
+\begin{problem}
+  Consider the function $f(x,y)=y^2\ln(3x+y)$.
+  \begin{enumerate}[(a)]
+    \item Calulate $\nabla f(0,1)$.
+    \begin{solution}
+      We have
+      \[\nabla f(x,y)=(f_x(x,y),f_y(x,y))=\left(\frac{3y^2}{3x+y},\frac{y^2}{3x+y}+2y\ln(3x+y)\right),\]
+      so
+      \[\nabla f(0,1)=\left(\frac{3}{1},\frac{1}{1}+2\ln(1)\right)=(3,1).\]
+    \end{solution}
+    \item Find the unit direction in which $f$ is increasing the greatest.
+    \begin{solution}
+      The direction of greatest increase is the same as the direction of the gradient, which is
+      \[\frac{(3,1)}{\|(3,1)\|}=\frac1{\sqrt10}(3,1).\]
+    \end{solution}
+    \item Find a unit direction in which $f$ is approximately neither increasing or decreasing.
+    \begin{solution}
+      We need to find a vector perpendicular to the gradient vector, the gradient vector being $(3,1)$ from part (a). One such example is the unit vector parallel to $(1,-3)$, which is
+      \[\frac1{\sqrt10}(1,-3).\]
+    \end{solution}
+  \end{enumerate}
+\end{problem}
+
+\begin{problem}\leavevmode
+  \begin{enumerate}[(a)]
+    \item Find all the critical points of $f(x,y)=x^2y+x^2+\frac{y^2}2$.
+    \begin{solution}
+      We must find $\nabla f(x,y)$, then solve $\nabla f(x,y)=0$ (which gives two equations, since $\nabla f(x,y)$ is a two-component vector). The system is
+      \begin{align*}
+        2x(y+1) &=0\\
+        x^2+y &= 0.
+      \end{align*}
+      From the first equation, either $x=0$ or $y=-1$. Plugging both possibilites into the second equation, we get the solutions $(0,0),(\pm 1,-1)$.
+    \end{solution}
+    \item Are there any saddle points among the critical points?
+    \begin{solution}
+      Let's compute discriminant and check it at each cricial point. We have
+      \[f_{xx}(x,y)=2(y+1),\quad f_{yy}(x,y)=1,\quad f_{xy}(x,y)=2x,\]
+      so
+      \[\mathcal D(f,(x,y))=2(y+1)-(2x)^2=-4x^2+2y+2.\]
+      At the points $(0,0),(1,-1),(-1,-1)$ respectively this evaluates to $2$, $-4$, and $-4$ respectively. So there are two saddle points, $(\pm1,-1)$.
+    \end{solution}
+  \end{enumerate}
+\end{problem}
+
+\begin{problem}
+  Write down the Lagrange equations you would need to solve the following problem: Let $C$ be the curve from the intersection of the cylinder $x^2+2y^2=1$ and the plane $x+2y+z=0$. Find the points on $C$ which are farthest from the point $(1,1,1)$. No need to solve the equations.
+\end{problem}
+\begin{solution}
+  We have two constraints. We can either eliminate one variable (preferred method) to turn the number of constraints to one, or use the method of p.953 in the textbook. I'll outline the first method.
+
+  Use the equation of the plane replace all instances of $z$ in the first constraint and objective function with $-x-2y$. If we do this then our constraint comes from the first constraint: $x^2+2y^2=1$, and our objective function is distance from $(x,y,-x-2y)$ to $(1,1,1)$. Let's make our objective function squared distance instead. So our objective function is
+  \[f(x,y)=(x-1)^2+(y-1)^2+(-x-2y-1)^2.\]
+  The Lagrange equations are then
+  \begin{align*}
+    x^2+2y^2 &= 1\\
+    f_x=\lambda g_x \iff 2(x-1)-2(-x-2y-1) &= \lambda \cdot 2x\\
+    f_y=\lambda g_y\iff 2(y-1)-4(-x-2y-1) &= \lambda\cdot 4y.
+  \end{align*}
+\end{solution}
+
+\begin{problem}
+  Let $D$ be the region bounded between the circles $x^2+y^2=1$, $x^2+y^2=4$, the line $y=-x$, and the negative $y$-axis. Evaluate
+  \[\iint_D\sin(x^2+y^2)\,dA\]
+  using polar coordinates.
+\end{problem}
+\begin{solution}
+  We parametrize the given region in polar coordinates by
+  \[\mathcal R=\left\{(r,\theta):\frac{3\pi}2\leq \theta\leq \frac{7\pi}4,1\leq r\leq 2\right\}.\]
+  Also, $\sin(x^2+y^2)$ is simply $\sin(r^2)$ in polar coordinates. So our integral becomes
+  \[\begin{split}
+    \int_{\frac{3\pi}2}^{\frac{7\pi}4}\int_1^2\sin(r^2)\cdot r\,dr\,d\theta &\overset{u\text{-sub}}= \int_{\frac{3\pi}2}^{\frac{7\pi}4} -\frac12\cos(r^2)\Big|_1^2\,d\theta\\
+    &= \int_{\frac{3\pi}2}^{\frac{7\pi}4}\frac{\cos(1)-\cos(4)}2\,d\theta\\
+    &= \frac{\pi(\cos(1)-\cos(4))}{8}.
+  \end{split}\]
+\end{solution}
+
+\begin{problem}
+  Let $\mathcal R$ be the right triangle with vertices $(0,0),(1,0),(0,1)$. Suppose $g(x,y)$ is a function such that
+  \[\int_0^1 g(x,0)\,dx=1,\quad \int_0^{0.75}g(x,0.25)\,dx=1.7,\quad\text{and }\int_0^{0.25}g(x,0.75)\,dx=1.9.\]
+  Using this information, find an approximate value of $\iint_{\mathcal R}g(x,y)\,dA$.
+\end{problem}
+\begin{solution}
+  Here are two approximation methods I came up with.
+
+  First method: We can parametrize the triangle as $\mathcal R=\{(x,y)\mid 0\leq y\leq 1,0\leq x\leq 1-y\}$. Then
+  \[\iint_{\mathcal R}g(x,y)\,dA=\int_0^1\int_0^{1-y}g(x,y)\,dx\,dy.\]
+  Let $G(y)$ represent the inner expression $\int_0^{1-y}g(x,y)\,dx$. The given information amounts to the following data points:
+  \[G(0)=1,\quad G(0.25)=1.7\quad G(0.75)=1.9.\]
+  Note that $G(0.5)$ is missing, so let's interpolate and say that $G(0.5)=1.8$. Only having these data points, we can approximate $\int_0^1 G(y)\,dy$ with the Riemann sum
+  \[\frac14G(0)+\frac14 G(0.25)+\frac14G(0.5)+\frac14G(0.75)=0.25+0.425+0.45+0.475=1.6.\]
+  If you assigned weight $\frac12$ to $G(0.25)$ on account of the fact that $G(0.5)$ is missing, that is fine too. You would get $1.575$ in that case.
+
+  The second method is a more geometric approach using averages and I think it gives a more accurate answer in practice. Let us express the given information in terms of average value of $g$ along certain lines $y=y_0$. The principle is: if $\int_a^b f(x)\,dx=A$, then the average of $f$ along the interval $[a,b]$ is $A/(b-a)$.
+
+  The given information can be thought of as saying that the average of $g$ along the line $y=0$ is 1, the average of $g$ along the line $y=0.25$ is $1.7/0.75=\frac43\cdot\frac{17}{10}=\frac{34}{15}$, and the average of $g$ along the line $y=0.75$ is $1.9/0.25=7.6=\frac{38}{5}$.
+
+  Let us hence model $g$ by the function $\widetilde g$ which is equal to 1 for $0\leq y< 0.125$, equal to $\frac{34}{15}$ for $0.125\leq y<0.5$, and equal to $\frac{38}5$ for $0.5\leq y\leq 1$. (We picked cutoff points based on which of $0,0.25,0.75$ the $y$-coordinate is closest to.)
+
+  The triangle can be split accordingly into three pieces inside which $\widetilde g$ is constant. The first piece is the piece in which $0\leq y<0.125$, which is a trapezoid with area $0.125\cdot \frac12(1+0.875)=0.1171875$. The integral of $\widetilde g$ inside this region is $1\cdot 0.1171875=0.1171875$.
+
+  The second piece is the piece in which $0.125\leq y<0.5$, which is a trapezoid with area $0.375\cdot\frac12(0.875+0.5)=0.2578125$. The integral of $\widetilde g$ inside here is $\frac{34}{15}\cdot0.2578125=0.584375$.
+
+  The final piece is the piece in which $0.5\leq y\leq 1$, which is a triangle with area $\frac18$. The integral of $\widetilde g$ inside here is $\frac{38}5\cdot \frac18=\frac{19}{20}=0.95$.
+
+  The sum of these 3 integrals is $1.6515625$.
+
+  Both approaches would get full credit on an exam, of course.
+\end{solution}
+
+% \begin{problem}
+%   How difficult was each problem? Rate each problem (and part) on a difficulty scale from 1 to 7, where 1 means ``super easy, barely an inconvenience!'' and 7 means ``hardest problem I've ever done.''
+% \end{problem}
+
+% \newpage
+
+% \section{Hints}

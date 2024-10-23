@@ -1,0 +1,127 @@
+\documentclass[11pt,oneside]{amsart}
+\input{../preamble}
+
+\title{MATH2202 Spring 2024\\
+Discussion 5}
+\date{February 20, 2024}
+
+\theoremstyle{definition}
+\newtheorem{question}{Question}
+
+\begin{document}
+  \maketitle
+First, TA will review the first two homework problems.
+  \begin{problem}[Pset3-problem 4b]
+   The functions
+  \[f(x_1,x_2,\dots,x_{10000})=x_1x_2\cdots x_{10000}\]
+  and
+  \[g(x_1,x_2,\dots,x_{10000})=x_{10000}!\]
+  are both functions in 10000 variables. Here, the notation $n!$ means the product of the positive integers from 1 to $n$ inclusive.
+  \begin{enumerate}[(b)]
+    
+    \item Recall that factorial is defined only for non-negative integer inputs $0,1,2,\dots$. Given this information, what is the natural domain of $g$, in other words, the largest subset of $\bR^{10000}$ on which $g$ is defined?
+    \begin{solution}
+      $g(x_1,\dots,x_{10000})$ is defined as long as $x_{10000}$ is a non-negative integer. Therefore the domain of $g$ is $\{(x_1,\dots,x_{10000})\mid x_{10000}\geq 0\text{ and }x\text{ is an integer}\}$. There are plenty of equivalent correct formulations:
+      \begin{itemize}
+        \item $\{(x_1,\dots,x_{10000})\mid x_{10000}\text{ is a non-negative integer}\}$
+        \item $\{(x_1,\dots,x_{10000})\mid x_{10000}\in\bZ\text{ and }x_{10000}\geq 0\}$
+        \item $\{(x_1,\dots,x_{10000})\mid x_{10000}\in\bZ_{\geq 0}\}$
+      \end{itemize}
+      The following are common incorrect answers:
+      \begin{itemize}
+        \item $\{(x_1,\dots,x_{10000})\mid {\color{red}x_{10000}\geq 0}\}$ (missed the condition that $x_{10000}$ must be an integer)
+        \item $\{(x_1,\dots,x_{10000})\mid {\color{red}\text{all }x_i\text{ are non-negative integers}}\}$ (missed that $x_1,\dots,x_{9999}$ is allowed take on non-integral values since $g$ is only taking the factorial of $x_{10000}$)
+        \item {\color{red}$[0,\infty)$} (the main issue is that this describes a set of scalars, rather than a set of 10000-tuples (vectors with 10000 components). It also suffers from the above two issues)
+      \end{itemize}
+
+      7 out of 43 students answered this question completely correctly, so take care to read this solution 15 times. To assist in understanding, I will give more examples of functions and their domains below:
+      \begin{itemize}
+        \item The function $f(x)=x!$ has domain $\bZ_{\geq 0}$, the set of non-negative integers.
+        \item The function $f(x,y)=y\cdot x!$ has domain $\{(x,y)\mid x\in\bZ_{\geq 0}\text{ and }y\in\bR\}$.
+        \item The function $f(x,y,z)=(x^2)!$ has domain $\{(\pm\sqrt n,y,z)\mid n\in\bZ_{\geq 0}\text{ and }y,z\in\bR\}$. This can also be written as $\{(x,y,z)\mid y,z\in\bR\text{ and }x=\pm\sqrt n\text{ for some }n\in\bZ_{\geq 0}\}$.
+        \item The function $f(x_1,x_2,\dots,x_{10000})=1/x_1$ has domain $\{(x_1,\dots,x_{10000})\mid x_1\neq 0\}$.
+        \item The function $f(x,y)=\log(x-y)$ has domain $\{(x,y)\mid x>y\}$.
+      \end{itemize}
+    \end{solution}
+  
+  \end{enumerate}
+\end{problem}
+
+
+\begin{problem}[Pset3-problem 2a]\leavevmode
+  \begin{enumerate}[(a)]
+    \item Show that the curves $t\mapsto (t^3+t^2-3t+1,t^2,3t-1)$ and $t\mapsto(3t+1,2t,t^2+t-1)$ intersect at two points.
+    \begin{solution}
+      The system of equations to solve is:
+      \begin{align*}
+        t^3+t^2-3t+1 &= 3s+1\\
+        t^2 &= 2s\\
+        3t-1 &= s^2+s-1.
+      \end{align*}
+      Note that we need to use two independent variables because it is not necessarily the case that the points of intersection correspond to the same parameter $t$ for both curves. Indeed, the paths of two particles can cross while the particles themselves miss each other. (See p.774--775 for an example in the textbook about this.)
+
+      We can take the second equation, rewrite it as $s=\frac{t^2}2$, and make that substitution into the first and third equation. Now we have two equations in $t$:
+      \begin{align*}
+        t^3+t^2-3t+1 &= \frac32t^2+1\\
+        3t-1 &= \frac94t^4+\frac32t^2-1.
+      \end{align*}
+      Let's solve the first equation first, since is a polynomial equation of degree 3 while the other one has degree 4. This first equation simplifies to
+      \[\begin{split}
+        t^3-\frac12t^2-3t=0 &\iff t\left(t^2-\frac12t-3\right)=0\\
+        &\iff t(2t^2-t-6)=0\\
+        &\iff t(2t+3)(t-2)=0.
+      \end{split}\]
+      Therefore the first equation has solutions $t=0,-\frac32,2$. Out of these, the solutions $t=0$ and $t=2$ also satisfy the last equation $3t-1=\frac94t^4+\frac32t^2-1$.
+
+      At $t=0$, the corresponding point is $(1,0,-1)$, and at $t=2$ the corresponding point is $(7,4,5)$. Thus, the two curves intersect at two points.
+
+      \textbf{Remark}: This problem has the coincidence that the incorrect solution that uses 1 variable $t$ in both sides of the system of equations still gets the correct answer. This does not mean it is a valid solution, though.
+    \end{solution}
+   
+  \end{enumerate}
+\end{problem}
+
+Next, you can discuss in groups on the following homework problems:
+\begin{problem}[Pset1-problem 3(b)]
+  The triangle inequality says that for all vectors $\bv$ and $\bw$,
+  \[\|\bv+\bw\|\leq \|\bv\|+\|\bw\|.\]
+  Of course I haven't proven it, but in part (b) of this problem you will prove it.
+    \begin{enumerate}[(b)]
+    
+      
+      \item Using the Cauchy-Schwarz inequality, prove the triangle inequality.
+      \begin{solution}
+        Let us prove the equivalent inequality $\|\bv+\bw\|^2\leq(\|\bv\|+\|\bw\|)^2$ instead. (Equivalent because both sides of the origial inequality are non-negative.) We have
+        \[\begin{split}
+          \|\bv+\bw\|^2 &= (\bv+\bw)\cdot(\bv+\bw)\\
+          &= \bv\cdot\bv+2\bv\cdot\bw+\bw\cdot\bw\\
+          &= \|\bv\|^2+2\bv\cdot\bw+\|\bw\|^2\\
+          &\leq\|\bv\|^2+2\|\bv\|\|\bw\|+|\bw\|^2\qquad\text{(by Cauchy-Schwarz)} \\
+          &=(\|\bv\|+\|\bw\|)^2.
+        \end{split}\]
+     
+      \end{solution}
+  \end{enumerate}
+\end{problem}
+\begin{problem}[Pset2-Problem4]
+  Find a formula for the distance between the two planes with Cartesian equations $Ax+By+Cz=D_1$ and $Ax+By+Cz=D_2$. You can use the following fact: if $P$ and $Q$ are two points on the two respective planes with minimum possible distance, then the vector $\overrightarrow{PQ}$ is perpendicular to both planes.
+
+\end{problem}
+\begin{solution}
+  Let $P=(x,y,z)$ and $Q$ be as in the hint: $P$ is on the first plane, $Q$ is on the second plane, and $Q$ is chosen so that $\|\overrightarrow{PQ}\|$ is minimal.
+
+  According to the fact in the problem, $\overrightarrow{PQ}\parallel\bn$, where $\bn=(A,B,C)$ is the common normal vector to both planes. (The fact that $\bn=(A,B,C)$ is because those are the coefficients of $x,y,z$ in both planes.)
+
+  So let $\overrightarrow{PQ}=\lambda\bn$. Moreover, we have the following:
+  \begin{align*}
+    P\cdot\bn&= D_1\\
+    Q\cdot\bn &= D_2,
+  \end{align*}
+  because, for example, the expression $P\cdot\bn$ equals $(x,y,z)\cdot(A,B,C)=Ax+By+Cz$ which is exactly equal to $D_1$ because of the fact that $P$ lies on the first plane. Similar reasoning holds for $Q$. Therefore,
+  \[\overrightarrow{PQ}\cdot\bn=(Q-P)\cdot \bn=Q\cdot \bn-P\cdot \bn=D_2-D_1,\]
+  But $\overrightarrow{PQ}\cdot\bn=(\lambda\bn)\cdot\bn=\lambda\|\bn\|^2$. Therefore, $\lambda\|\bn\|^2=D_2-D_1$, so $\lambda=\frac{D_2-D_1}{\|\bn\|^2}$. Finally,
+  \[\|\overrightarrow{PQ}\|=\|\lambda\bn\|=|\lambda|\|\bn\|=\frac{|D_2-D_1|}{\|\bn\|^2}\|\bn\|=\frac{|D_2-D_1|}{\sqrt{A^2+B^2+C^2}}.\]
+\end{solution}
+
+  
+\end{document}

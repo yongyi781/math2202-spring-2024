@@ -1,0 +1,265 @@
+\documentclass[11pt,oneside]{amsart}
+\usepackage[margin=1in]{geometry}
+\usepackage{amssymb,parskip,mathtools,microtype,xcolor,pgfplots}
+\usepackage[shortlabels]{enumitem}
+\pgfplotsset{compat=1.18}
+\usepgfplotslibrary{fillbetween}
+
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+\newtheorem{question}{Question}
+\newtheorem*{remark}{Remark}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+
+\newcommand{\bC}{\mathbb{C}}
+\newcommand{\bQ}{\mathbb{Q}}
+\newcommand{\bR}{\mathbb{R}}
+\newcommand{\bZ}{\mathbb{Z}}
+\newcommand{\bE}{\mathbb{E}}
+\newcommand{\BP}{{\mathbf{P}}}
+\newcommand{\ba}{{\mathbf{a}}}
+\newcommand{\bi}{{\mathbf{i}}}
+\newcommand{\bj}{{\mathbf{j}}}
+\newcommand{\bk}{{\mathbf{k}}}
+\newcommand{\bn}{{\mathbf{n}}}
+\newcommand{\br}{{\mathbf{r}}}
+\newcommand{\bs}{{\mathbf{s}}}
+\newcommand{\bu}{{\mathbf{u}}}
+\newcommand{\bv}{{\mathbf{v}}}
+\newcommand{\bw}{{\mathbf{w}}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\blank}{\underline{\hspace{1cm}}}
+\newcommand{\longblank}{\underline{\hspace{2cm}}}
+
+\DeclareMathOperator{\Var}{Var}
+\let\Re\relax
+\DeclareMathOperator{\Re}{Re}
+\let\Im\relax
+\DeclareMathOperator{\Im}{Im}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\dir}{\mathbf{dir}}
+
+\title{MATH2202 Spring 2024\\
+Exam 1}
+\author{Wednesday, February 21, 2024}
+
+\begin{document}
+\maketitle
+
+Name: \underline{\hspace{6cm}}
+
+This exam is open book. Calculators are not allowed. There are 50 points total in this exam. If you do not manage to solve a problem, show a strategy you tried and a reflection on why it did not work, for partial credit.
+
+\vskip 2cm
+
+Please answer the following questions. {\color{blue}The boxed answers had the best averages.}
+
+\begin{question}
+  I did the practice problems on the homework. (Circle one.)
+
+  \hspace{1.5cm}\boxed{\text{Yes, all of them}}\hspace{1.5cm} Some of them\hspace{1.5cm} No
+\end{question}
+
+\begin{question}
+  I did the midterm additional practice problems. (Circle one.)
+
+  \hspace{1.5cm}\boxed{\text{Yes, all of them}}\hspace{1.5cm} Some of them\hspace{1.5cm} No\hspace{1.5cm}What's that?
+\end{question}
+
+\begin{question}
+  I understood the homework solutions. (Circle one.)
+
+  \hspace{1.5cm}\boxed{\text{Yes, all of them}}\hspace{1.5cm} Some of them\hspace{1.5cm} No
+\end{question}
+
+\begin{question}
+  I can understand the textbook. (Circle one.)
+
+  \hspace{1.5cm}\boxed{\text{Yes}}\hspace{1.5cm} Only the examples\hspace{1.5cm} No, but I tried\hspace{1.5cm}Didn't read
+\end{question}
+
+\begin{question}
+  I come to class. (Circle one.)
+
+  \hspace{1.5cm}\boxed{\text{Yes and I mainly listen}}\hspace{1.5cm}Yes and I take notes\hspace{1.5cm} No
+\end{question}
+
+\begin{question}
+  I come to discussions. (Circle one.)
+
+  \hspace{1.5cm}\boxed{\text{Yes}}\hspace{1.5cm} No
+\end{question}
+
+\begin{question}
+  I studied using: (Circle all that apply.)
+
+  \hspace{1.5cm}\boxed{\text{Homework solutions}}\hspace{0.05\textwidth} \boxed{\text{Practice problems}}\hspace{0.05\textwidth} Materials from previous years
+
+  \hspace{1.5cm}Other (please specify): \underline{\hspace{8cm}}
+\end{question}
+
+\newpage
+
+\begin{problem}
+  Questions about multivariable functions.
+  \begin{enumerate}[(a)]
+    \item (3 points) Compute the limit
+    \[\lim_{(x,y)\to (0,0)}((1-xy)^2+\sin(x+y)).\]
+    \begin{remark}\color{blue}
+      The function $(1-xy)^2+\sin(x+y)$ is continuous everywhere so you can just evaluate the function at $(0,0)$ to compute the limit.
+
+      For the most part, the only errors people made were arithmetic in nature.
+    \end{remark}
+    \vfill
+    \item (4 points) Sketch, on the same plot, the level sets $L_5$ and $L_6$ for $f(x,y)=x^2+y+1$.
+    \begin{remark}\color{blue}
+      The plot is two parabolas in the $xy$-plane, one which is the graph of $y=4-x^2$ and the other which is the graph of $y=5-x^2$.
+
+      The most common errors were drawing ellipses instead of parabolas, and drawing in 3D instead of 2D.
+      \begin{center}
+        \begin{tikzpicture}
+          \begin{axis}[axis equal, axis lines=middle, ymin=-5, ymax=5]
+            \addplot[domain=-3:3, samples=100] {4-x^2};
+            \addplot[domain=-4:4, samples=100] {5-x^2};
+          \end{axis}
+        \end{tikzpicture}
+      \end{center}
+    \end{remark}
+    \vfill
+    \vfill
+    \item (3 points) Sketch the domain of $f(x,y)=\sqrt{y+1}$.
+    \begin{remark}\color{blue}
+      The domain is $\{(x,y)\mid y\geq -1\}$. The sketch is the $xy$-plane with the region $y\geq-1$ filled in.
+
+      The most common error was being sloppy with the inequality (i.e. $>$ instead of $\geq$) in either the description or the sketch. There were also some issues understanding how to sketch the domain.
+      \begin{center}
+        \begin{tikzpicture}
+          \fill[blue!30] (-3,3) -- (3,3) -- (3,-1) -- (-3,-1) -- cycle;
+          \draw[->, gray] (-3,0) -- (3,0) node[right] {$x$};
+          \draw[->, gray] (0,-3) -- (0,3) node[above] {$y$};
+          \draw (-3,-1) -- (3,-1) node[right] {$y=-1$};
+        \end{tikzpicture}
+      \end{center}
+   \end{remark}
+    \vfill
+  \end{enumerate}
+\end{problem}
+
+\newpage
+
+\begin{problem}
+  Questions about vectors.
+  \begin{enumerate}[(a)]
+    \item (3 points) Do the vectors $(-1,5,2)$ and $(-1,-2,4)$ have an acute, obtuse, or right angle between them? Prove it.
+    \begin{remark}\color{blue}
+      The dot product between them is $-1$, so the angle is obtuse.
+    \end{remark}
+    \vfill
+    \item (4 points) Find the area of the triangle in space with vertices $(1,0,0)$, $(0,2,0)$, and $(0,0,3)$.
+    \begin{remark}\color{blue}
+      Let $P,Q,R$ be the requested points; the requested area can be calculated by
+      \[\frac12\|\overrightarrow{PQ}\times\overrightarrow{PR}\|\]
+      and equals $\frac72$ when all is said and done.
+    \end{remark}
+    \vfill
+    \item (3 points) Find the equation of a plane which is parallel to the plane $3x+4y-5z=9$ and passes through the the point $(1,-2,1)$.
+    \begin{remark}\color{blue}
+      We must find a new constant term for the plane instead of 9. The equation will look like
+      \[3x+4y-5z=D\]
+      for some constant $D$. Since $(1,-2,1)$ is on this desired plane, $D$ must be equal to $3(1)+4(-2)-5(1)=-10$.
+    \end{remark}
+    \vfill
+  \end{enumerate}
+\end{problem}
+
+\newpage
+
+\begin{problem}[10 points]
+  Find parametric equations for the tangent line to $\br(t)=(t,t^2,2t+3)$ at $(2,4,7)$. Write your answer in \textbf{both} the vector-valued function $\br(t)$ format and the $x=\_,y=\_,z=\_$ format.
+\end{problem}
+\begin{remark}\color{blue}
+  The point $(2,4,7)$ corresponds to $t=2$. At this point, the direction vector for the tangent line is $\br'(2)=(1,2t,2)\Big|_{t=2}=(1,4,2)$. Thus the tangent line has parametric vector-valued equation
+  \[\bs(t)=(2,4,7)+t(1,4,2)\]
+  and parametric equations
+  \[x(t)=2+t,\quad y(t)=4+4t,\quad z(t)=7+2t.\]
+\end{remark}
+
+\newpage
+
+\begin{problem}[10 points]
+  Let $\bv=(x,y,z)$. Prove that the projection of $\bv$ onto $(1,1,1)$ is the vector $(w,w,w)$ where $w$ is the average of $x$, $y$, and $z$.
+\end{problem}
+\begin{remark}\color{blue}
+  We know $w=(x+y+z)/3$, since the average of $n$ numbers is defined as their sum divided by $n$.
+
+  The projection of $\bv$ onto $(1,1,1)$ is
+  \[\BP_{(1,1,1)}\bv=\frac{\bv\cdot(1,1,1)}{(1,1,1)\cdot(1,1,1)}(1,1,1)=\frac{x+y+z}{3}(1,1,1)=\left(\frac{x+y+z}3,\frac{x+y+z}3,\frac{x+y+z}3\right).\]
+  This equals $(w,w,w)$.
+
+  People did well on this problem.
+
+\end{remark}
+
+\newpage
+
+\begin{problem}\leavevmode
+  \begin{enumerate}[(a)]
+    \item (5 points) The vector-valued function $\br(t)=(\cos(t),\sin(t))$ describes a particle traveling on the unit circle with a constant speed.
+
+    Give an example of another vector-valued function $\bs(t)$ which describes a particle traveling on the unit circle, but with a non-constant speed. Show that (i) your example stays on the unit circle and (ii) the speed is not constant.
+    \begin{remark}\color{blue}
+      This tripped up a lot of people. Any reparametrization such as $(\cos(t^2),\sin(t^2))$ would have worked.
+
+      Common errors include:
+      \begin{itemize}
+        \item Thinking ``on the unit circle'' meant ``on or inside the unit circle,'' leading to many incorrect proofs of (i) by showing that $-1\leq x(t)\leq 1$ and $-1\leq y(t)\leq 1$, which actually does not even suffice to show that $\br(t)$ stays inside the unit circle---it shows $\br(t)$ stays inside the unit \textbf{square}. To show that a point $(x,y)$ lies on the unit circle, one must show that $x^2+y^2=1$. For the $(\cos(t^2),\sin(t^2))$ example:
+        \[\cos^2(t^2)+\sin^2(t^2)=1\]
+        because of the Pythagorean identity (notice it's important that the arguments to $\cos$ and $\sin$ are the same for this to work; see below).
+        \item Reparametrizing with different functions in the two components, such as $(\cos(t^2),\sin(t))$ or $(\cos(2t),\sin(t))$. Here is what $t\mapsto(\cos(t^2),\sin(t))$ looks like, for example ($0\leq t\leq 2\pi$):
+        \begin{center}
+          \begin{tikzpicture}
+            \begin{axis}[trig format plots=rad, axis equal,axis lines=middle]
+              \addplot[domain=0:2*pi, samples=100] ({cos(x^2)}, {sin(x)});
+            \end{axis}
+          \end{tikzpicture}
+        \end{center}
+        As you can see, the particle does not trace out a circle! It is important that one reparametrizes using a single scalar-valued function $\phi(t)$ for both components, not two different scalar-valued functions.
+      \end{itemize}
+      People generally did well in showing (ii), the non-constancy of the speed. Errors there include only showing that the components are not constant, which is not sufficient; indeed, the original $(\cos(t),\sin(t))$ has constant speed despite the fact that the components are not constant.
+    \end{remark}
+    \vfill
+    \item (5 points) Prove that for \textbf{every} possible vector-valued function $\bs(t)$ that describes a particle traveling on the unit circle, the vectors $\bs(t)$ and $\bs'(t)$ are perpendicular at every time $t$.
+    \begin{remark}\color{blue}
+      Here's the proof I had in mind:
+
+      Let $\bs(t)$ be a vector-valued function that describes a particle traveling on the unit circle. Since $\bs(t)$ is given to lie on the unit cirlce for all $t$, we know that
+      \[\|\bs(t)\|=1\text{ for all }t.\]
+      Square both sides and use the fact that the length squared of a vector is also the dot product of that vector with itself, to get:
+      \[\bs(t)\cdot\bs(t)=1\text{ for all }t.\]
+      Take derivative of both sides and use product rule for dot products:
+      \[\bs(t)\cdot\bs'(t)+\bs'(t)\cdot\bs(t)=0\text{ for all }t,\]
+      which is equivalent to
+      \[2\bs(t)\cdot\bs'(t)=0\text{ for all }t.\]
+      Dividing both sides by 2, we have shown that $\bs(t)\perp\bs'(t)$ for all $t$.
+
+      As you can see, this is very reminiscent of a problem solving session we did in class. In class we proved a 3D version of the very same problem, that a vector-valued function $\bs(t)$ that describes an ant traveling on the unit sphere satisfies $\bs(t)\perp\bs'(t)$ for all $t$.
+
+      There was an alternative proof given by 3 people which I didn't expect, but was nonetheless correct. It went like this:
+
+      Since every point on the unit circle is of the form $(\cos\theta,\sin\theta)$ for some $\theta$, it follows that every vector-valued function $\bs(t)$ that describes a particle traveling on the unit circle can be written in the form $\bs(t)=(\cos(\theta(t)),\sin(\theta(t)))$ for some scalar-valued function $\theta(t)$, i.e.\ every such $\bs(t)$ is a reparametrization of the standard parametrization $(\cos(t),\sin(t))$. Using this fact, we can directly compute $\bs(t)\cdot\bs'(t)$ and show it is zero:
+      \[\begin{split}
+        \bs(t)\cdot\bs'(t) &= (\cos(\theta(t)),\sin(\theta(t)))\cdot(-\theta'(t)\sin(\theta(t)),\theta'(t)\cos(\theta(t)))\\
+        &= -\theta'(t)\cos(\theta(t))\sin(\theta(t))+\theta'(t)\sin(\theta(t))\cos(\theta(t))\\
+        &= 0.
+      \end{split}\]
+      The most common error on this problem was not understanding that the bolded word \textbf{every} in the problem statement meant that you must prove the claim for the most general possible $\bs(t)$ satisfying the hypotheses. Many people only showed the claim for a particular $\bs(t)$.
+    \end{remark}
+    \vfill
+    \vfill
+  \end{enumerate}
+\end{problem}
+
+\end{document}

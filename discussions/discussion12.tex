@@ -1,0 +1,40 @@
+\documentclass[11pt,oneside]{amsart}
+\input{../preamble}
+
+\title{MATH2202 Spring 2024\\
+Discussion 12}
+\date{April 23, 2024}
+
+\theoremstyle{definition}
+\newtheorem{question}{Question}
+
+\begin{document}
+  \maketitle
+
+  The TA will demonstrate 1.
+
+  \begin{problem}
+    This is the example I promised yesterday. Let $\BF(x,y)=\frac{(-y,x)}{x^2+y^2}$.
+    \begin{enumerate}[(a)]
+      \item Sketch $\BF$.
+      \item Show that $\nabla\times \BF=0$.
+      \item Show that $\int_C\BF\cdot d\br\neq 0$, where $C$ is the unit circle starting and ending at $(1,0)$.
+      \item This seems to contradict Theorem 5 on p.1079 (this is the curl test, stated equivalently). Explain which condition was not met and why.
+    \end{enumerate}
+  \end{problem}
+
+  \begin{problem}
+    This problem will be about line integrals over closed curves. All curves in this question are traversed counterclockwise.
+    \begin{enumerate}[(a)]
+      \item Let $\BF(x,y)=(1,x)$. Calculate $\int_C \BF\cdot d\br$ where $C$ is the unit circle starting and ending at $(1,0)$.
+      \item Calculate $\int_C \BF\cdot d\br$ where $C$ is the unit circle starting and ending at $(0,1)$. (Hint: $(\sin(t),-\cos(t))$ for $0\leq t\leq 2\pi$ can parametrize this curve.)
+      \item Calculate $\int_C \BF\cdot d\br$ where $C$ is the unit circle starting and ending at $(-1,0)$.
+      \item You should've gotten the same answer for all 3 parts. Make a conjecture about line integrals over closed curves to explain why.
+      \item Challenge: Prove this conjecture. You can do it by splitting the curve into two parts and rearranging.
+    \end{enumerate}
+  \end{problem}
+
+  \begin{problem}
+    Prove the second part of the grad-curl-div theorem from yesterday: $\nabla\cdot(\nabla\times\BF)=0$ for all twice continuously differentiable vector fields $\BF$. Start by writing $\BF$ as $(M,N,R)$.
+  \end{problem}
+\end{document}

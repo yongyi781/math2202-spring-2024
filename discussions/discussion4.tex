@@ -1,0 +1,54 @@
+\documentclass[11pt,oneside]{amsart}
+\input{../preamble}
+
+\title{MATH2202 Spring 2024\\
+Discussion 4}
+\date{February 13, 2024}
+
+\theoremstyle{definition}
+\newtheorem{question}{Question}
+
+\begin{document}
+  \maketitle
+
+  The TA will demonstrate problems 1(a), 2(a), and 3(a).
+
+  \begin{problem}
+    Write down the domain and range of each of the following functions:
+    \begin{enumerate}[(a)]
+        \item $g(x,y)=\dfrac{xy}{x+y}$.
+        \item $f(x,y)=\sqrt{9-6x^2+y^2}$.
+    \end{enumerate}
+  \end{problem}
+
+  \begin{problem}
+    Let $g(x,y)=\displaystyle\int_x^y\frac 1t\,dt$. Find
+    \begin{enumerate}[(a)]
+        \item $g(4,1)$.
+        \item $g(6,3)$.
+        \item $g(2,5)$.
+        \item $g(\frac12,7)$.
+    \end{enumerate}
+  \end{problem}
+
+  \begin{problem}
+    Let's review some things from the past that might have been hard to understand.
+    \leavevmode\begin{enumerate}[(a)]
+      \item If $P$ and $Q$ are points in 3-space, what is $\overrightarrow{PQ}\times\overrightarrow{QP}$? Answer: 0. Why?
+      \item If $\overrightarrow{PQ}$ is perpendicular to a vector $\bv$, we know $\overrightarrow{PQ}\cdot\bv=0$. Is it also the case that $P\cdot\bv=0$ and $Q\cdot\bv=0$? Answer: No. Find a counterexample that shows this.
+      \item Do $\br(t)=P+t\mathbf m$ and $\mathbf s(t)=P+t(-\mathbf m)$ describe the same line in space? Answer: Yes. Why?
+      \item If you are still not comfortable with the format $P+t\mathbf m$ to describe a line, let's do an example in 2D. If you are comfortable, you can skip to part (e). For $P=(3,4)$ and $\mathbf m=(1,2)$, sketch the trajectory of $t\mapsto P+t\mathbf m$ in the plane. Then do the same with $P=(3,4)$ and $m=(-1,-2)$.
+      \item The word ``component'' seems to have multiple meanings. For example,
+      \begin{enumerate}
+        \item Scalar component of $\bv$ in the direction of $\bw$ refers to the number $\bv\cdot\dir(\bw)$.
+        \item Vector component of $\bv$ in the direction of $\bw$ refers to the vector $\mathbf{proj}_\bw\bv$.
+        \item I say $\bi$-component to refer to the first coordinate of a vector, $\bj$-component to refer to the second coordinate, and $\bk$-component to refer to the third coordinate.
+      \end{enumerate}
+      In fact, (c) and (a) are the same meaning. Check this with an example, like $\bv=(-5,2,0)$ and $\bw=\bi=(1,0,0)$.
+    \end{enumerate}
+  \end{problem}
+
+\subsection*{Challenge problem}
+Sketch level curves for the function $g(x,y)=\frac{xy}{x+y}$ from 1(a). Perhaps use $c=-2,-1,0,1,2$.
+
+\end{document}
